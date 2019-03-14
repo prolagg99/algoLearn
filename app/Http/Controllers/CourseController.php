@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    // done
+    // new
     // a nother commit
     // my comments
 }
