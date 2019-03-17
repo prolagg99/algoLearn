@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\course;
 class CourseController extends Controller
 {
     /**
@@ -13,7 +13,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        dd('test');
+        $mycourses = course::all();
+        return view('course_view.course-index', [
+            'courses' => $mycourses
+        ]);
     }
 
     /**
@@ -23,7 +26,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        
+        return view('course_view.course-create');
     }
 
     /**
@@ -34,7 +37,14 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $title = $request->input('title');
+        $details = $request->input('details');
+
+        $course = new course;
+        $course->title = $title;
+        $course->details = $details;
+        $course->save();
+        return back();
     }
 
     /**
@@ -45,7 +55,11 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+        $course = course::findOrfail($id);
+
+        return view('course_view.course-show', [
+            'course' => $course
+        ]);
     }
 
     /**
@@ -56,7 +70,10 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = course::findOrfail($id);
+        return view('course_view.course-edit', [
+            'course' => $course
+        ]);
     }
 
     /**
@@ -68,7 +85,15 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = course::findOrfail($id);
+        
+        $title = $request->input('title');
+        $details = $request->input('details');
+
+        $course->title = $title;
+        $course->details = $details;
+        $course->save();
+        return back();
     }
 
     /**
@@ -79,6 +104,9 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = course::findOrfail($id);
+        $course->delete();
+
+        return back();
     }
 }
