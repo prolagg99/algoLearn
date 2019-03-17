@@ -29,14 +29,15 @@ Route::post('/courses/{id}/delete','CourseController@destroy');
 
 // chapters ----------------------------------------
 
-Route::get('/{course_id}/chapters','ChapterController@index');
-Route::get('/{course_id}/chapters/{id}','ChapterController@show');
 
-Route::get('/chapter/create/{course_id}','ChapterController@create');
+Route::get('/{course_id}/chapters','ChapterController@index');
+Route::get('/chapters/{id}','ChapterController@show');
+
+Route::get('{course_id}/chapters/create/','ChapterController@create');
 Route::post('/{course_id}/chapters','ChapterController@store');
 
 
-Route::get('/{course_id}/chapters/{id}/edit','ChapterController@edit');
-Route::post('/{course_id}/chapters/{id}','ChapterController@update');
+Route::get('/chapters/{id}/edit','ChapterController@edit');
+Route::post('/chapters/{id}','ChapterController@update');
 
-Route::post('/{course_id}/chapters/{id}/delete','chapterController@destroy');
+Route::post('/chapters/{id}/delete','chapterController@destroy');

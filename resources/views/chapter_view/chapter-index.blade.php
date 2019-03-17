@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <table class="table">
         <thead>
             <tr>
@@ -15,7 +14,7 @@
                 <tr>
                     <td>{{$item->title}}</td>
                     <td>
-                    <form action="/{{$item->cours_id}}/chapters/{{$item->id}}/delete" method="POST">
+                    <form action="/chapters/{{$item->id}}/delete" method="POST">
                         {{ csrf_field() }}
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>

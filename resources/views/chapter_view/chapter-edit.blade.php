@@ -1,7 +1,7 @@
 @extends('base-layout')
 
 @section('content')
-    <form action="/{{$chapter->cours_id}}/chapters/{{$chapter->id}}" method="POST">
+    <form action="/chapters/{{$chapter->id}}" method="POST">
             {{ csrf_field() }}
 
         <div class="form-group">

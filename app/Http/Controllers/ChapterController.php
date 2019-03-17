@@ -12,9 +12,9 @@ class ChapterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(request $request,$cours_id)
+    public function index(request $request,$course_id)
     {
-        $chapter = chapter::where('cours_id',$cours_id)->get();
+        $chapter = chapter::where('course_id',$course_id)->get();
         return view('chapter_view.chapter-index',[
             'chapters' => $chapter
         ]);
@@ -25,10 +25,10 @@ class ChapterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($cours_id)
+    public function create($course_id)
     {
         return view('chapter_view.chapter-create',[
-            'cId'=>$cours_id]);
+            'cId'=>$course_id]);
     }
 
     /**
@@ -37,13 +37,13 @@ class ChapterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$cours_id)
+    public function store(Request $request,$course_id)
     {
        $title = $request->input('title');
       
        $chapter = new chapter;
        $chapter->title = $title;
-       $chapter->cours_id =$cours_id;
+       $chapter->course_id =$course_id;
        $chapter->save();
        return back();
     }
@@ -70,7 +70,7 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($cours_id,$id)
+    public function edit($id)
     {
         $chapter = chapter::findOrfail($id);
         return view('chapter_view.chapter-edit', [
@@ -85,7 +85,7 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$cours_id,$id)
+    public function update(Request $request, $id)
     {
         $title = $request->input('title'); 
         
@@ -102,7 +102,7 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($cours_id,$id)
+    public function destroy($id)
     {
        
         $chapter = chapter::findOrfail($id);
