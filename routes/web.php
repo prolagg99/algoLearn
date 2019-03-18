@@ -33,7 +33,7 @@ Route::post('/courses/{id}/delete','CourseController@destroy');
 Route::get('/{course_id}/chapters','ChapterController@index');
 Route::get('/chapters/{id}','ChapterController@show');
 
-Route::get('{course_id}/chapters/create/','ChapterController@create');
+Route::get('/{course_id}/chapters/create/','ChapterController@create');
 Route::post('/{course_id}/chapters','ChapterController@store');
 
 
@@ -41,3 +41,16 @@ Route::get('/chapters/{id}/edit','ChapterController@edit');
 Route::post('/chapters/{id}','ChapterController@update');
 
 Route::post('/chapters/{id}/delete','chapterController@destroy');
+
+// lessons ------------------------------------------
+
+Route::get('/{course_id}/{chapter_id}/lessons','LessonController@index');
+
+//Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');
+Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');
+Route::post('/{course_id}/{chapter_id}/lessons','LessonController@store');
+
+Route::get('/lessons/{id}/edit','LessonController@edit');
+Route::post('/lessons/{id}','LessonController@update');
+
+Route::post('/lessons/{id}/delete','LessonController@destroy');

@@ -3,7 +3,7 @@
 
 @section('content')
 
-<table class="table">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Course Title</th>
