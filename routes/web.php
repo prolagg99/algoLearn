@@ -46,7 +46,6 @@ Route::post('/chapters/{id}/delete','chapterController@destroy');
 
 Route::get('/{course_id}/{chapter_id}/lessons','LessonController@index');
 
-//Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');
 Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');
 Route::post('/{course_id}/{chapter_id}/lessons','LessonController@store');
 
@@ -54,3 +53,15 @@ Route::get('/lessons/{id}/edit','LessonController@edit');
 Route::post('/lessons/{id}','LessonController@update');
 
 Route::post('/lessons/{id}/delete','LessonController@destroy');
+
+// lessons questions ----------------------------------------------------
+
+Route::get('/{lesson_id}/questions','LessonQuestionController@index');
+
+Route::get('/{lesson_id}/questions/create','LessonQuestionController@create');
+Route::post('/{lesson_id}/questions','LessonQuestionController@store');
+
+Route::get('/questions/{id}/edit','LessonQuestionController@edit');
+Route::post('/questions/{id}','LessonQuestionController@update');
+
+Route::post('/questions/{id}/delete','LessonQuestionController@destroy');
