@@ -7,9 +7,13 @@
         <label for="">question</label>
         <input type="text" name="question">
     </div>
-    <div>
-        <label for="">type</label>
-        <input type="text" name="type">
+
+    <div class="form-group">
+        <label>type</label>
+        <select name="type" class="form-control">
+            <option value="input">Question as Input</option>
+            <option value="list">Question as Select</option>
+        </select>
     </div>
     <div>
         <label for="">options</label>

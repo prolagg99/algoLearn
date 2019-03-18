@@ -13,7 +13,7 @@ class CreateLessonQuizQuestionsTable extends Migration
      */
     public function up()
     {         
-        Schema::create('lesson_quiz_questions', function (Blueprint $table) {
+        Schema::create('chapter_quiz_questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('quiz_id');
             $table->text('question');
@@ -30,6 +30,6 @@ class CreateLessonQuizQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lesson_quiz_questions');
+        Schema::dropIfExists('chapter_quiz_questions');
     }
 }
