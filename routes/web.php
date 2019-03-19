@@ -65,3 +65,28 @@ Route::get('/questions/{id}/edit','LessonQuestionController@edit');
 Route::post('/questions/{id}','LessonQuestionController@update');
 
 Route::post('/questions/{id}/delete','LessonQuestionController@destroy');
+
+// chapters quiz ------------------------------------------------------
+
+Route::get('/{chapter_id}/quizzes','ChapterQuizController@index');
+
+Route::get('/{chapter_id}/quizzes/create','ChapterQuizController@create');
+Route::post('/{chapter_id}/quizzes','ChapterQuizController@store');
+
+Route::get('/quizzes/{id}/edit','ChapterQuizController@edit');
+Route::post('/quizzes/{id}','ChapterQuizController@update');
+
+Route::post('/quizzes/{id}/delete','ChapterQuizController@destroy');
+
+// chapters quiz questions ---------------------------------------------
+
+
+Route::get('/{quiz_id}/qsts','ChapterQuizQuestionController@index');
+
+Route::get('/{quiz_id}/qsts/create','ChapterQuizQuestionController@create');
+Route::post('/{quiz_id}/qsts','ChapterQuizQuestionController@store');
+
+Route::get('/qsts/{id}/edit','ChapterQuizQuestionController@edit');
+Route::post('/qsts/{id}','ChapterQuizQuestionController@update');
+
+Route::post('/qsts/{id}/delete','ChapterQuizQuestionController@destroy');

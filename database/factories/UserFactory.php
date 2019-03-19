@@ -6,6 +6,9 @@ use Faker\Generator as Faker;
 use App\course;
 use App\chapter;
 use App\lesson;
+use App\lesson_questions;
+use App\chapter_quizzes;
+use App\chapter_quiz_questions;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +55,33 @@ $factory->define(lesson::class, function (Faker $faker) {
         'details' => $faker->paragraph
     ];
 });
+
+$factory->define(lesson_questions::class, function (Faker $faker) {
+    return [
+        'lesson_id' => '',
+        'question' => $faker->word,
+        'type' => 'list',
+        'options' => $faker->word,
+        'right_answer' => $faker->word
+    ];
+});
+
+$factory->define(chapter_quizzes::class, function (Faker $faker) {
+    return [
+        'chapter_id' => '',
+        'title' => $faker->word
+    ];
+});
+
+$factory->define(chapter_quiz_questions::class, function (Faker $faker) {
+    return [
+        'quiz_id' => '',
+        'question' => $faker->word,
+        'type' => 'list',
+        'options' => $faker->word,
+        'right_answer' => $faker->word
+    ];
+});
+
+
+
