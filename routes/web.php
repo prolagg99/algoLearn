@@ -90,3 +90,6 @@ Route::get('/qsts/{id}/edit','ChapterQuizQuestionController@edit');
 Route::post('/qsts/{id}','ChapterQuizQuestionController@update');
 
 Route::post('/qsts/{id}/delete','ChapterQuizQuestionController@destroy');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
