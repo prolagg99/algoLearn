@@ -12,7 +12,6 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-
         factory(App\course::class, 10)->create()->each(function($course) {
 
             factory(App\chapter::class, 10)->create([
@@ -23,18 +22,18 @@ class CoursesTableSeeder extends Seeder
                     'chapter_id' => $chapter->id, 
                     'course_id' => $chapter->course_id
                 ]) ->each(function($lesson){
-                    factory(App\lesson_questions::class)->create([
+                    factory(App\lesson_questions::class, 1)->create([
                         'lesson_id' => $lesson->id,
                     ]);
                 });
 
-                factory(App\chapter_quizzes::class)->create([
+                factory(App\chapter_quizzes::class, 1)->create([
                     'chapter_id' => $chapter->id, 
                 ])->each(function($chapter_quizzes){
-                    factory(App\chapter_quiz_questions::class,6)->create([
+                    factory(App\chapter_quiz_questions::class, 1)->create([
                         'quiz_id' => $chapter_quizzes->id,
                     ]);
-                    });
+                });
 
             });
             

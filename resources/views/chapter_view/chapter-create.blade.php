@@ -1,16 +1,33 @@
-@extends('base-layout')
+
+@extends('layouts.app')
+
 
 @section('content')
 
-<form action="/{{ $cId }}/chapters" method="POST">
-    @csrf
-    <div class="form-group">
-        <label>chapter Title</label>
-        <input name="title" type="text" class="form-control">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Create a new Chapter</div>
+
+                <div class="card-body">
+                   
+                    <form action="/{{ $cId }}/chapters" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label>chapter Title</label>
+                            <input name="title" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+</div>
 
 
 @endsection
