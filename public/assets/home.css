@@ -1,0 +1,189 @@
+.algo-nav2 .collapse ul li.active::after {
+    content: "";
+    width: 0;
+    height: 0;
+}
+.algo-nav2 {
+    height: 70px;
+    padding: 0;
+    background: #FDFDFD !important;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(189,188,197,0.5);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(189,188,197,0.5);
+    box-shadow: 0px 1px 3px 0px rgba(189,188,197,0.5);
+    margin-bottom: 0;
+}
+
+/* section 1 **********************/
+header {
+    width: 100%;
+    height: 553px;
+    background-color: white;
+    margin: 0;
+    padding: 0%;
+    background: url(images/im.jpg) 100% 100% no-repeat;
+    background-size: cover;
+    
+}
+
+
+
+.details {
+    margin-top: 163px;
+    font-family: "Baloo Chettan";
+    position: absolute;
+}
+
+.details h1{
+    font-size: 45px;
+    color: #504A64;
+}
+
+.details p{
+    font-size: 25px;
+    color: white;
+    width: 734px;
+}
+
+.details input {
+    font-size: 25px;
+    color: white;
+    background-color: #D23E54;
+    width: 274px;
+    height: 45px ;
+    border-radius: 25px;
+    border: none;
+}
+/* section 2 *************************/
+.cards {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.n-card {
+    border: none;
+    text-align: center;
+}
+.cards .child1 {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 160%;
+    bottom: 0;
+    left: 0;
+    background-color: #6D56AE;
+}
+
+.cards .child2 {
+    margin-top: -85px;
+    z-index: 2;
+    position: relative;
+}
+
+.n-card p {
+    padding: 0;
+    line-height: 15px;
+    font-family: "Baloo Chettan";
+    font-size: 30px;
+    text-transform: capitalize;
+    
+}
+.n-card .sub {
+    font-size: 25px;
+    color: #504A64;
+}
+
+.prgrph {
+    color: #D23E54;
+    margin: 55px 0;
+}
+
+.card-white {
+    margin: 29px 0;
+    color: white;
+}
+ .n-card.c1,.n-card.c3 {
+    margin-top: -65px;
+ }
+
+ 
+
+
+/* section 3 *************************/
+.befor-foter {
+    width: 100%;
+    height: 189px;
+    background-color:  rgba(187, 186, 195, 0.2);
+    font-family: "Baloo Chettan";
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 36px 0; 
+}
+
+.befor-foter h2{
+    color: #504A64;
+    margin-bottom: 15px;
+}
+
+.befor-foter input {
+    font-size: 25px;
+    color: white;
+    background-color: #D23E54;
+    width: 236px;
+    height: 45px ;
+    border-radius: 25px;
+    border: none;
+}
+
+/* section 4 ****************************/
+
+footer {
+    width: 100%;
+    height: 268px;
+    background-color: #6D56AE;
+    margin: 0;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+footer p,h3{
+    display: inline;
+}
+
+.footer {
+    padding-top: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Baloo Chettan";
+}
+
+footer p {
+    margin-right: 50px;
+    font-size: 21px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.footer a {
+    text-decoration: none;
+    line-height: 55px;
+}
+
+footer h3 {
+    font-size: 40px;
+    color: white;
+}
+
+.footer input {
+    font-size: 21px;
+    color: white;
+    background-color: #D23E54;
+    width: 114px;
+    height: 51px ;
+    border-radius: 25px;
+    border: none;
+}

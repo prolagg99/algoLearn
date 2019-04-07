@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/lessons', 'WebPages@viewLessonsPage');
 
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
 
