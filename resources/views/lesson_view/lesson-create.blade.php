@@ -1,10 +1,8 @@
-
-
-
-
-
 @extends('layouts.app')
 
+@section('title')
+    create new lesson
+@endsection
 
 @section('content')
 
@@ -16,7 +14,7 @@
 
                 <div class="card-body">
                    
-                    <form action="/{{ $course_id }}/{{ $chapter_id }}/lessons" method="POST">
+                    <form action="/admin/{{ $course_id }}/{{ $chapter_id }}/lessons" method="POST">
                         {{ csrf_field() }}
                     
                         <div class="form-group">
@@ -44,6 +42,7 @@
         </div>
     </div>
 </div>
+
 
 
 @endsection

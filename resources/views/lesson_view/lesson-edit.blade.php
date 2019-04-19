@@ -1,6 +1,9 @@
 
 @extends('layouts.app')
 
+@section('title')
+    edite lesson
+@endsection
 
 @section('content')
 
@@ -12,16 +15,16 @@
 
                 <div class="card-body">
                    
-                        <form action="/lessons/{{ $lesson->id }}" method="POST">
+                        <form action="/admin/lessons/{{ $lesson->id }}" method="POST">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="">lesson title</label>
-                                <input type="text" name="title" placeholder="{{ $lesson->title }}" class="form-control">
+                                <input type="text" name="title" value="{{ $lesson->title }}" class="form-control">
                             </div>
                     
                             <div class="form-group">
                                     <label for="">lesson details</label>
-                                    <textarea class="form-control" name="details" rows="7"></textarea>
+                                    <textarea class="form-control" name="details" value="{{ $lesson->details }}" rows="7"></textarea>
                             </div>
                             
                             
