@@ -12,7 +12,7 @@
     
                     <div class="card-body">
                        
-                            <form action="/{{ $quiz_id }}/qsts" method="POST">
+                            <form action="/admin/{{ $quiz_id }}/qsts" method="POST">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="">quiz question</label>

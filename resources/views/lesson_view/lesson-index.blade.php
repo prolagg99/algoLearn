@@ -1,6 +1,9 @@
 
 @extends('layouts.app')
 
+@section('title')
+    show lessons
+@endsection
 
 @section('content')
 
@@ -24,7 +27,7 @@
                                     @foreach($lesson as $item)
                                     <tr>
                                         <td>{{$item->title}}</td>
-                                        <td>{{$item->details}}</td>
+                                        <td>{!! $item->details !!}</td>
                                         <td>
                                         <form action="/admin/lessons/{{ $item->id }}/delete" method="POST">
                                             {{ csrf_field() }}

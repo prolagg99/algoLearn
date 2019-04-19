@@ -12,7 +12,7 @@
 
                 <div class="card-body">
                    
-                    <form action="/{{ $cId }}/chapters" method="POST">
+                    <form action="/admin/{{ $cId }}/chapters" method="POST">
                         @csrf
                         <div class="form-group">
                             <label>chapter Title</label>

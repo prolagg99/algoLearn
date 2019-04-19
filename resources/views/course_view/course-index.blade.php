@@ -23,7 +23,7 @@
                         @foreach($courses as $item)
                         <tr>
                             <td>{{$item->title}}</td>
-                            <td>{{$item->details}}</td>
+                            <td>{!! $item->details!!}</td>
                             <td>
                               <form action="/admin/courses/{{ $item->id }}/delete" method="POST">
                                   {{ csrf_field() }}

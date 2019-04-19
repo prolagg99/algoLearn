@@ -12,15 +12,15 @@
 
                 <div class="card-body">
                    
-                        <form action="/questions/{{ $lesson_questions->id }}" method="POST">
+                        <form action="/admin/questions/{{ $lesson_questions->id }}" method="POST">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="">question</label>
-                                <textarea class="form-control" name="question" rows="5" placeholder="{{$lesson_questions->question}}"></textarea>
+                                <textarea class="form-control" name="question" rows="5" value="{{$lesson_questions->question}}"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">type</label>
-                                <input type="text" name="type" class="form-control" placeholder="{{$lesson_questions->type}}">
+                                <input type="text" name="type" class="form-control" value="{{$lesson_questions->type}}">
                             </div>
                             <div class="form-group">
                                 <label for="">options</label>

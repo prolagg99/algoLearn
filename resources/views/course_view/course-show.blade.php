@@ -5,6 +5,6 @@
 
 <h4> {{$course->title}} </h4>
 <p>
-    {{$course->details}}
+    {!! $course->details !!}
 </p>
 @endsection

@@ -12,12 +12,12 @@
 
                 <div class="card-body">
                    
-                    <form action="/chapters/{{$chapter->id}}" method="POST">
+                    <form action="/admin/chapters/{{$chapter->id}}" method="POST">
                             {{ csrf_field() }}
                 
                         <div class="form-group">
                             <label for=""> Set the new title </label><br>
-                            <input type="text" name="title" placeholder="{{$chapter->title}}" class="form-control">
+                            <input type="text" name="title" value="{{$chapter->title}}" class="form-control">
                             
                         </div>
                 

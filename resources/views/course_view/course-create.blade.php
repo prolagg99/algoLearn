@@ -9,7 +9,7 @@
                 <div class="card-header">Create a new Course</div>
 
                 <div class="card-body">
-                        <form action="/courses" method="POST">
+                        <form action="/admin/courses" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Course Title</label>

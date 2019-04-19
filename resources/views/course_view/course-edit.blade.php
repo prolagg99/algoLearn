@@ -13,7 +13,7 @@
 
                 <div class="card-body">
                    
-                     <form action="/courses/{{$course->id}}" method="POST">
+                     <form action="/admin/courses/{{$course->id}}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Course Title</label>
