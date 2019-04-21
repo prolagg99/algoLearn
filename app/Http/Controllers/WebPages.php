@@ -14,14 +14,9 @@ class WebPages extends Controller
 
 
         $chapters = chapter::where('course_id', 1)->with('quiz')->with('lessons')->with('quizQuestions')->get();
-        $lessonsCount = lesson::where('course_id', 1)->count();
-        $questionsCount = chapter_quiz_questions::count();
-        
-        
-        return view("web.lessons", [
+
+        return view("web.chapitre1", [
             'chapters' => $chapters,
-            'lessons_count' => $lessonsCount,
-            'questions_count' => $questionsCount,
         ]);
     }
 }

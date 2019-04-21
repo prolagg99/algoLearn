@@ -14,9 +14,35 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'ChapterController@index2');
+
+// user routes --------------------------------------------------
 
 Route::get('/lessons', 'WebPages@viewLessonsPage');
 
+Route::get('/accueil', function(){
+    return view('web.Interface');
+});
+
+Route::get('/chapitres', 'WebPages@viewLessonsPage');
+
+Route::get('/login1', function(){
+    return view('web.login1');
+});
+
+Route::get('/mdpoublier', function(){
+    return view('web.mdpoublier');
+});
+
+Route::get('/inscription', function(){
+    return view('web.inscription');
+});
+
+Route::get('/mdpoublier', function(){
+    return view('web.mdpoublier');
+});
+
+// admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
 
     Route::resource('courses', 'CourseController');

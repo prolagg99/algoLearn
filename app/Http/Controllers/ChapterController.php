@@ -19,7 +19,7 @@ class ChapterController extends Controller
             'chapters' => $chapter
         ]);
     }
-
+     
     /**
      * Show the form for creating a new resource.
      *
