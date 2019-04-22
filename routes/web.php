@@ -42,6 +42,9 @@ Route::get('/mdpoublier', function(){
     return view('web.mdpoublier');
 });
 
+Route::get('/récupércompte', function(){
+    return view('web.récupércompte');
+});
 // admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
 

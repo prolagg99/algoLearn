@@ -21,7 +21,7 @@
             
             <div class="inputBox">
              <input type="email" name="email" required="">
-             <label> Nom utilisateur</label>
+             <label> Adresse e-mail</label>
             </div>
             <div class="inputBox" >
                 <input type="password" name="password" required="">
@@ -33,14 +33,14 @@
       </div>
 
 	<br/><br>
-    <div id="d4" style="color:white">
+    
         @if (Route::has('password.request'))
-            <h4><a class="" href="{{ route('password.request') }}">
+            <h4><a class="" href="/mdpoublier">
                 {{ __('Mot de passe oublier') }}
             </a></h4>
         @endif
         <h4><a href="/inscription"> J'ai pas de compte </a></h4>
-    </div>
+    
 	</form>
     
 

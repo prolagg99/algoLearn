@@ -21,7 +21,7 @@
              <label> Entrez votre adress e_mail pour recevoir un code de sécurité</label>
             </div>
             
-      <input type="submit" name="" value="Envoyer">
+      <a href=""><input type="submit" name="" value="Envoyer"></a>
       <div class="inputBox"><p><a href="{{ URL::previous() }}">Retour</a></p>
       </div>
 
