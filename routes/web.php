@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    Cookie::queue('lastpage2', '/', 3600);
+    return view('web.Interface');
 });
+
 Route::get('/home', 'ChapterController@index2');
 
 // user routes --------------------------------------------------

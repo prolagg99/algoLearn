@@ -16,20 +16,30 @@
         
         <h2>Connexion</h2>
         
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}" autocomplete="false">
                 @csrf
             
             <div class="inputBox">
-             <input type="email" name="email" required="">
+             <input type="email" name="email" required value="{{ old('email')}}">
              <label> Adresse e-mail</label>
             </div>
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+            
             <div class="inputBox" >
-                <input type="password" name="password" required="">
+                <input type="password" name="password" required>
                 <label> Mot de passe </label>
             </div>
-
+            @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
       <input type="submit" name="" value="{{ __('Login') }}">
-      <div class="inputBox"><p><a href="{{ URL::previous() }}">Retour</a></p>
+      <div class="inputBox"><p><a href="{{ Cookie::get('lastpage2') }}">Retour</a></p>
       </div>
 
 	<br/><br>

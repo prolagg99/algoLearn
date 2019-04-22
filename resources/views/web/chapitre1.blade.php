@@ -25,7 +25,14 @@
         <li><a href="#">simulateur</a></li>
         </ul>
         <br/><br/>
-        <div class="inputBox" style="color : white"><p><a href="/login1">Login</a></p>
+        
+
+        @if (Auth::guest())
+          <div class="inputBox" style="color : white"><p><a href="/login1">Login</a></p>
+        @else
+          
+          <div class="inputBox" style="color : white"><p><a href="/logout">{{Auth::user()->name}}</a></p>
+        @endif
       </div>
    <!--<div class="Menu">Menu</div>
 
@@ -86,12 +93,17 @@
   </div>
 </div>
 
+      <form id="">
+
+      </form>
 
 <div class="s"><a href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav1()">&#9776;Ch01 tutoriel</span></a></div>
   <div class="s1"><a href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776;Ch02 tutoriel</span></a></div>
   <div class="s2"><a href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Ch03 tutoriel</span></a></div>
   <div class="s3"><a href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Ch04 tutoriel</span></a></div>
 <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script>
 function openNav1() {
