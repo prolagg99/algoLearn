@@ -37,17 +37,17 @@
     	<li><a href="#">simulateur</a></li>
         </ul>
         <br/><br/>
+        
         <div class="inputBox" style="color : blue">
 
-        @if (Auth::guest())
-            <p><a href="/login1">Login</a></p>
-        @else
-        <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
-        <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
-        @endif
-       
-     
-</div>
+            @if (Auth::guest())
+                <p><a href="/login1">Login</a></p>
+            @else
+            <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
+            <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
+            @endif
+        
+        </div>
 <div class="dropdown-overlay"></div>
 <form id="logoutform" method="POST" action="/logout">
     @csrf

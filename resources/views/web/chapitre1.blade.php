@@ -27,13 +27,20 @@
         <br/><br/>
         
 
-        @if (Auth::guest())
-          <div class="inputBox" style="color : white"><p><a href="/login1">Login</a></p>
-        @else
-          
-          <div class="inputBox" style="color : white"><p><a href="/logout">{{Auth::user()->name}}</a></p>
-        @endif
-      </div>
+        <div class="inputBox" style="color : blue">
+
+            @if (Auth::guest())
+                <p><a href="/login1">Login</a></p>
+            @else
+            <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
+            <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
+            @endif
+        
+        </div>
+        <div class="dropdown-overlay"></div>
+        <form id="logoutform" method="POST" action="/logout">
+            @csrf
+        </form>
    <!--<div class="Menu">Menu</div>
 
         <ul >

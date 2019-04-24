@@ -33,16 +33,12 @@ Route::get('/login1', function(){
     return view('web.login1');
 });
 
-Route::get('/mdpoublier', function(){
-    return view('web.mdpoublier');
-});
-
 Route::get('/inscription', function(){
     return view('web.inscription');
 });
 
-Route::get('/mdpoublier', function(){
-    return view('web.mdpoublier');
+Route::get('/password/reset', function(){
+    return view('auth.passwords.email');
 });
 
 Route::get('/récupércompte', function(){

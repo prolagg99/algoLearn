@@ -25,7 +25,7 @@
             </div>
             @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('email') }}</strong>
+                    <strong style="color: rgb(255, 204, 0);">{{ $errors->first('email') }}</strong>
                 </span>
             @endif
             
@@ -45,7 +45,7 @@
 	<br/><br>
     
         @if (Route::has('password.request'))
-            <h4><a class="" href="/mdpoublier">
+            <h4><a class="" href="/password/reset">
                 {{ __('Mot de passe oublier') }}
             </a></h4>
         @endif
