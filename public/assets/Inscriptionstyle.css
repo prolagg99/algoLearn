@@ -1,9 +1,10 @@
-#d{
-   margin:0 auto;
-    
-    /*background-color: #dfe6e9;*/
+body {
     background-image: url('images/ler2.jpg');
-    height: 800px;  
+    background-repeat: no-repeat;
+}
+
+#d{
+  margin:0 auto;
   background-position: bottom left;
 }
 
@@ -27,7 +28,7 @@ input[type=text]{
     box-shadow: 0 15px 25px rgba(0,0,0,.5); 
     border-radius: 10px ;
     margin-top: 80px;
-    height: 570px;
+    
     opacity: 0.9;
 
 }

@@ -11,20 +11,16 @@
 |
 */
 
+
+
+Route::get('/home', 'ChapterController@index2');
+Route::get('/lessons', 'WebPages@viewLessonsPage');
+// user routes --------------------------------------------------
+
 Route::get('/', function () {
 
     Cookie::queue('lastpage2', '/', 3600);
-    return view('web.Interface');
-});
-
-Route::get('/home', 'ChapterController@index2');
-
-// user routes --------------------------------------------------
-
-Route::get('/lessons', 'WebPages@viewLessonsPage');
-
-Route::get('/accueil', function(){
-    return view('web.Interface');
+    return view('home');
 });
 
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
@@ -44,6 +40,11 @@ Route::get('/password/reset', function(){
 Route::get('/récupércompte', function(){
     return view('web.récupércompte');
 });
+
+Route::get('/choisirnvmdp', function(){
+    return view('web.choisirnvmdp');
+});
+
 // admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
 

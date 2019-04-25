@@ -17,7 +17,7 @@ class chapter extends Model
         
     }
 
-    public function quiz() {
+   /* public function quiz() {
         return $this->hasOne('App\chapter_quizzes');
     } 
 
@@ -30,5 +30,5 @@ class chapter extends Model
             'id', 
             'id' 
         );
-    }
+    }*/
 }

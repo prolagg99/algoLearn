@@ -2,15 +2,13 @@ body{
   background-color: #CAD3C8;
   margin:0;
   padding: 0;
-
+  background-image: url('images/ler2.jpg');
+  background-repeat: no-repeat;
 }
 #d{
   color:white;
   margin:0 auto;
-  text-align: center;
- background-image: url('images/ler2.jpg');
-  /*background-color: #CAD3C8;*/
-  height: 800px;  
+  text-align: center; 
   background-position: bottom left;
   
 }
@@ -432,25 +430,20 @@ a{
   color:white;
 }
 .s{
-  position: absolute;
+  text-align: center;
+  display: inline-block;
   top: 35%;
   left: 50%;
   transform: translate(-50%,-50%);
   padding: 15px 0;
   font-family: arial;
   font-size: 24px;
-  
   color: #262626;
   border-top: 2px solid #262626;
   border-bottom: 2px solid #262626;
   letter-spacing: 2px;
   transition: .3s;
-  /*background-color: white;*/
-  /* background-color: rgba(0, 0, 255, 0.2); ** move claire***/
   background-color:  hsla(0, 100%, 90%, 0.3);
-  /*background-color:  hsl(0, 0%, 71%);*/
-
-
 }
 .s a:hover{
   letter-spacing: 15px

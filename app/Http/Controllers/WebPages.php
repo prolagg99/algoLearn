@@ -14,11 +14,11 @@ class WebPages extends Controller
     public function viewLessonsPage() {
 
         
-        $chapters = chapter::where('course_id', 1)->with('quiz')->with('lessons')->with('quizQuestions')->get();
+        $chapters = chapter::where('course_id', 1)->with('lessons')->get();
         
         Cookie::queue('lastpage2', '/chapitres', 3600);
         return view("web.chapitre1", [
-            'chapters' => $chapters,
+            'chapters' => $chapters
         ]);
     }
 }
