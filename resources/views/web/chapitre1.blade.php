@@ -41,45 +41,82 @@
         </form>
    
   <!------------------ chapters and lessons --------------->  
-  <div>
-      <?php $x=1; ?>
-      @foreach ($chapters as $chapter)
-      <div class="s">
-        <a href="#">
-          <?php $ch=$chapter->id ?>
-          <span style="font-size:30px;cursor:pointer" data-this-is-wild="{{$ch}}" onclick="openNav1(this.dataset.thisIsWild)">&#9776;Ch{{ $x++ }} {{$chapter->title}}</span>
-        </a> 
-      </div>
 
-      <div id="myNav1" class="overlay">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
-          <div class="overlay-content">
-              <?php $somevar = $_GET["one"]; ?>
-              @foreach ($chapter->lessons as $item)
-                @if ($somevar == $item['chapter_id'])
-                  <a href="#">{{ $item->title }}</a> 
-                @endif
-              @endforeach
-          </div>
-        </div>  
-      @endforeach
-  </div>
   
-<!------------------ end of chapters and lessons ---------------> 
+    
+
+
+
+
+  @foreach ($chapters as $chapter) 
+
+    <!-- Chapter -->
+    <div><a href="#"><span style="font-size:30px;cursor:pointer" onclick="openDialog({{$chapter->id}})">&#9776;{{$chapter->title}}</span></a></div>
+ 
+    <!-- overlay -->
+    <div class="overlay" id="chap{{$chapter->id}}">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeDialog({{$chapter->id}})">&times;</a>
+      <div class="overlay-content">
+        @foreach ($chapter->lessons as $lesson)
+          <a href="#"> {{$lesson->title}} </a>
+        @endforeach
+      </div>
+    </div>
+    @endforeach
 
 <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script>
-function openNav1(obj) {
-  var one = obj.getAttribute(data-this-is-wild);
+  function openDialog(chapterID) {
+    var divID = "chap" + chapterID;
+    $('#'+divID).fadeIn();
+  }
+
+  function closeDialog(chapterID) {
+    var divID = "chap" + chapterID;
+    $('#'+divID).fadeOut();
+  }
+function openNav1() {
   document.getElementById("myNav1").style.height = "100%";
 }
 
 function closeNav1() {
   document.getElementById("myNav1").style.height = "0%";
 }
+function openNav2() {
+  document.getElementById("myNav2").style.height = "100%";
+}
 
+function closeNav2() {
+  document.getElementById("myNav2").style.height = "0%";
+}
+
+
+
+
+</script>
+<!------------------ end of chapters and lessons ---------------> 
+
+<!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+            
+            $('#dropdown-opener').click(function(){
+                $('.dropdown-content').fadeToggle();
+                $('.dropdown-overlay').toggle();
+            });
+      
+            $('.dropdown-overlay').click(function() {
+                $('.dropdown-content').fadeOut();
+                $('.dropdown-overlay').hide();
+            });
+      
+            $('#logoutButton').click(function(){
+                $('#logoutform').submit();
+            });
+        });
 </script>
 </div>
 

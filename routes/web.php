@@ -51,7 +51,6 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::resource('courses', 'CourseController');
     // chapters ----------------------------------------
 
-
     Route::get('/{course_id}/chapters','ChapterController@index');
     Route::get('/chapters/{id}','ChapterController@show');
 
@@ -65,7 +64,6 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::post('/chapters/{id}/delete','chapterController@destroy');
 
     // lessons ------------------------------------------
-
     Route::get('/{course_id}/{chapter_id}/lessons','LessonController@index');
 
     Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');

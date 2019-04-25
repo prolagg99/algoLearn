@@ -371,7 +371,8 @@ ul{
 
 /************************* Design de liste ***************************************/
 .overlay {
-  height: 0%;
+  height: 100%;
+  display: none;
   width: 100%;
   position: fixed;
   z-index: 1;
