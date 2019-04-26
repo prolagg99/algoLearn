@@ -49,7 +49,7 @@
                 {{ __('Mot de passe oublier') }}
             </a></h4>
         @endif
-        <h4><a href="/inscription"> J'ai pas de compte </a></h4>
+        <h4><a href="/register"> J'ai pas de compte </a></h4>
     
 	</form>
     

@@ -12,8 +12,8 @@
 */
 
 
+Route::get('admin/welcome','ChapterController@index2');
 
-Route::get('/home', 'ChapterController@index2');
 Route::get('/lessons', 'WebPages@viewLessonsPage');
 // user routes --------------------------------------------------
 
@@ -21,6 +21,10 @@ Route::get('/', function () {
 
     Cookie::queue('lastpage2', '/', 3600);
     return view('home');
+});
+
+Route::get('/contact', function(){
+    return view('contact-us');
 });
 
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
@@ -37,13 +41,6 @@ Route::get('/password/reset', function(){
     return view('auth.passwords.email');
 });
 
-Route::get('/récupércompte', function(){
-    return view('web.récupércompte');
-});
-
-Route::get('/choisirnvmdp', function(){
-    return view('web.choisirnvmdp');
-});
 
 // admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
@@ -65,11 +62,12 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
 
     // lessons ------------------------------------------
     Route::get('/{course_id}/{chapter_id}/lessons','LessonController@index');
+    Route::get('/lessons/{id}','LessonController@show');
 
     Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');
     Route::post('/{course_id}/{chapter_id}/lessons','LessonController@store');
 
-    Route::get('/lessons/{id}/edit','LessonController@edit');
+    Route::get('/lessons/{id}/edit','LessonController@edit')->middleware('mine');
     Route::post('/lessons/{id}','LessonController@update');
 
     Route::post('/lessons/{id}/delete','LessonController@destroy');
