@@ -20,6 +20,7 @@
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Create</button>
+                            <a href="/admin/welcome" class="btn btn-primary">Back</button></a> 
                         </div>
                     </form>
                     

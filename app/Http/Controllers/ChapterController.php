@@ -19,6 +19,14 @@ class ChapterController extends Controller
             'chapters' => $chapter
         ]);
     }
+
+    public function index2()
+    {
+        $chapter = chapter::where('course_id',1)->get();
+        return view('welcome',[
+            'chapters' => $chapter
+        ]);
+    }
      
     /**
      * Show the form for creating a new resource.

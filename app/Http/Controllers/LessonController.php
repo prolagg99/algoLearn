@@ -20,7 +20,8 @@ class LessonController extends Controller
                         ->get();
 
         return view('lesson_view.lesson-index',[
-            'lesson' => $lesson
+            'lesson'    => $lesson,
+            'chapter_id'=> $chapter_id
         ]);                
         
     }
@@ -59,6 +60,15 @@ class LessonController extends Controller
 
       // return redirect('/{course_id}/{chapter_id}/lessons');
         return back();
+    }
+
+    public function show($id)
+    {
+        $lesson = lesson::findOrfail($id);
+
+        return view('lesson_view.lesson-show', [
+            'lesson' => $lesson
+        ]);
     }
 
     /**

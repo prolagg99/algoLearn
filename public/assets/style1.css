@@ -652,3 +652,28 @@ input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px transparent inset !important;
     background: blue !important;
 }
+
+/*          contact-us    **************** */
+@font-face {
+  font-family: 'Lato Light';
+  src: url('fonts/Lato/Lato-Light.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato Regular';
+  src: url('fonts/Lato/Lato-Regular.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
+}
+.contact-us{
+  text-align: left;
+  color: white;
+  font-family: 'lato Regular';
+}
+
+.contact-us label {
+  font-size: 18px;
+}
+

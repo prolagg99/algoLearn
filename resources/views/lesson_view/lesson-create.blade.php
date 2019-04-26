@@ -26,12 +26,13 @@
 
                         <div class="form-group">
                             <label for="">lesson details</label>
-                            <textarea class="form-control" name="details" rows="7"></textarea>
+                            <textarea class="form-control" name="details" rows="35"></textarea>
                         </div>
                 
                         <div class="form-group">
                             
                              <button type="submit" class="btn btn-primary">Create</button>
+                            <a href="/admin/1/{{$chapter_id}}/lessons" class="btn btn-primary">Back</button></a> 
                 
                         </div>
                 

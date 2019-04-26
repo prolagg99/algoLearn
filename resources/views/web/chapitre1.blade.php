@@ -21,7 +21,7 @@
         <li><a href="/">Acceuil</a></li>
         <li><a href="/chapitres">Chapitres</a></li>
         <li><a href="#">about</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="/contact">contact</a></li>
         <li><a href="#">simulateur</a></li>
         </ul>
         <br/><br/>

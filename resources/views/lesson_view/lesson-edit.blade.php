@@ -24,13 +24,14 @@
                     
                             <div class="form-group">
                                     <label for="">lesson details</label>
-                                    <textarea class="form-control" name="details" rows="7">{{ $lesson->details }}</textarea>
+                                    <textarea class="form-control" name="details" rows="35">{{ $lesson->details }}</textarea>
                             </div>
                             
                             
                             <div class="form-group">
                             
                                  <button type="submit" class="btn btn-primary">edit</button>
+                                 <a href="/admin/lessons/{{ $lesson->id }}" class="btn btn-primary">Back</button></a>
                        
                             </div>
                     

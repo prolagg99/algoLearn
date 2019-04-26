@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <style>
             html, body {
                 background-color: #fff;
@@ -20,9 +21,7 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
+           
 
             .flex-center {
                 align-items: center;
@@ -40,13 +39,6 @@
                 top: 18px;
             }
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
 
             .links > a {
                 color: #636b6f;
@@ -58,9 +50,6 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
     <body>
@@ -79,13 +68,41 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    ALGOlearn
+            <div class="container">
+                <div class="row">
+                    <div class="com-md-12">
+                        <div class="jumbotron" style="margin-top:50px;">
+                                <h1>ALGOlearn</h1>
+                                <p>...</p>
+                                <p><a class="btn btn-primary btn-lg" href="/admin/1/chapters/create/" role="button">New Chapter</a></p>
+                            </div>
+                    </div>
                 </div>
 
+                <?php $x=1; ?>
+                @foreach ($chapters as $chapter)
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Chapter{{ $x++ }}: {{$chapter->title}} </h3>   
+                        <p style="display: inline;"><a class="btn btn-primary btn-lg" href="/admin/1/{{$chapter->id}}/lessons" role="button">Lessons</a></p> 
+                        <div class="delete-edit" style="float: right;" >
+                            <div style="display: inline-block;">
+                                <a class="btn btn-success btn-lg" href="/admin/chapters/{{$chapter->id}}/edit" role="button">Edit</a>
+                            </div>
+                            <div style="display: inline-block;">
+                                <form action="/admin/chapters/{{$chapter->id}}/delete" method="POST">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                @endforeach
                 
-            </div>
+
         </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 </html>
