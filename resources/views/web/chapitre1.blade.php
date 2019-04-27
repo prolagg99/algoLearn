@@ -36,7 +36,7 @@
             <p class="dropdown-content">
               <a id="logoutButton" href="#">Logout</a>
               @if (Auth::user()->role == "admin")
-              <a href="/courses/1">Admin Panel</a>
+              <a href="admin/welcome">Admin Panel</a>
               @endif
             </p>
             @endif

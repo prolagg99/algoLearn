@@ -70,7 +70,7 @@
             <button id="buttontwo"> Subscribe </button> -->
              <div class="btn">  
  <div class="btn1"><a href="/inscription">inscrer</a></div>
- <div class="btn2"><a href="/login1">Login</a></div>
+ <div class="btn2"><a href="">Login</a></div>
  <div class="btn3"><a href="/chapitres">Start </a></div>
   </div>
         </div>

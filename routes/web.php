@@ -12,7 +12,7 @@
 */
 
 
-Route::get('admin/welcome','ChapterController@index2');
+
 
 Route::get('/lessons', 'WebPages@viewLessonsPage');
 // user routes --------------------------------------------------
@@ -44,8 +44,8 @@ Route::get('/password/reset', function(){
 
 // admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
-
-    Route::resource('courses', 'CourseController');
+    Route::get('/welcome','ChapterController@index2');
+    Route::resource('/courses', 'CourseController');
     // chapters ----------------------------------------
 
     Route::get('/{course_id}/chapters','ChapterController@index');
@@ -67,7 +67,7 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::get('/{course_id}/{chapter_id}/lessons/create','LessonController@create');
     Route::post('/{course_id}/{chapter_id}/lessons','LessonController@store');
 
-    Route::get('/lessons/{id}/edit','LessonController@edit')->middleware('mine');
+    Route::get('/lessons/{id}/edit','LessonController@edit');
     Route::post('/lessons/{id}','LessonController@update');
 
     Route::post('/lessons/{id}/delete','LessonController@destroy');

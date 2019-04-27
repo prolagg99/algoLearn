@@ -39,30 +39,24 @@
             <br/><br/>
             
             <div class="inputBox" style="color : blue">
-    
                 @if (Auth::guest())
                     <p><a href="/login1">Login</a></p>
                 @else
+              
                 <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
-                <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
-                @if (Auth::user()->role == "user")
-                <a href="/courses/1">Admin Panel</a>
+                <p class="dropdown-content">
+                  <a id="logoutButton" href="#">Logout</a>
+                  @if (Auth::user()->role == "admin")
+                  <a href="admin/welcome">Admin Panel</a>
+                  @endif
+                </p>
                 @endif
-                @endif
-            
             </div>
-    <div class="dropdown-overlay"></div>
-    <form id="logoutform" method="POST" action="/logout">
-        @csrf
-    </form>
-    
-    
-    
-       
-    
-    
-    
-    </div>-->
+            <div class="dropdown-overlay"></div>
+            <form id="logoutform" method="POST" action="/logout">
+                @csrf
+            </form>
+            </div>
     <!--<div class="hl">-->
         <div class="lm">
        <div class="text">
@@ -72,8 +66,8 @@
                 <!--<button id="buttonone"> like share </button>
                 <button id="buttontwo"> Subscribe </button> -->
                  <div class="btn">  
-     <div class="btn1"><a href="/inscription">inscrer</a></div>
-     <div class="btn2"><a href="/login1">Login</a></div>
+     <div class="btn1"><a href="/register">inscrer</a></div>
+     <div class="btn2"><a href="">Login</a></div>
      <div class="btn3"><a href="/chapitres">Start </a></div>
       </div>
             </div>

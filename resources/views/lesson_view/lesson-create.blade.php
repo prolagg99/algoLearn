@@ -26,7 +26,7 @@
 
                         <div class="form-group">
                             <label for="">lesson details</label>
-                            <textarea class="form-control" name="details" rows="35"></textarea>
+                            <textarea class="form-control" name="details" rows="15"></textarea>
                         </div>
                 
                         <div class="form-group">

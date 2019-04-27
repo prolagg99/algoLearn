@@ -24,7 +24,7 @@
                     
                             <div class="form-group">
                                     <label for="">lesson details</label>
-                                    <textarea class="form-control" name="details" rows="35">{{ $lesson->details }}</textarea>
+                                    <textarea class="form-control" name="details" rows="15">{{ $lesson->details }}</textarea>
                             </div>
                             
                             
