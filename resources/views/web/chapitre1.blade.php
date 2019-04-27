@@ -45,7 +45,8 @@
         <form id="logoutform" method="POST" action="/logout">
             @csrf
         </form>
-   
+        </div>
+
   <!------------------ chapters and lessons --------------->  
 
   
@@ -53,11 +54,12 @@
 
 
 
+  <div>
 
   @foreach ($chapters as $chapter) 
-
+    <div style="clear:both;"></div>
     <!-- Chapter -->
-    <div><a href="#"><span style="font-size:30px;cursor:pointer" onclick="openDialog({{$chapter->id}})">&#9776;{{$chapter->title}}</span></a></div>
+    <a style="font-size:30px; display:block;" href="#" onclick="openDialog({{$chapter->id}})">  &#9776;{{$chapter->title}}</a>
  
     <!-- overlay -->
     <div class="overlay" id="chap{{$chapter->id}}">
@@ -69,6 +71,8 @@
       </div>
     </div>
     @endforeach
+
+</div>
 
 <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
 
@@ -124,7 +128,6 @@ function closeNav2() {
             });
         });
 </script>
-</div>
 
 
 </body>
