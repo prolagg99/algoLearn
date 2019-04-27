@@ -620,12 +620,16 @@ opacity: 0.7;
 
 .dropdown-content {
   display: none;
-  height: 19px;
   width: 59px;
   position: relative;
   left: 15px;
   z-index: 100;
   margin-top: -78px;
+
+}
+.dropdown-content a {
+  display: block;
+  padding: 5px 0;
 
 }
 #dropdown-opener {

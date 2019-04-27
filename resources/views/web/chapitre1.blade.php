@@ -31,8 +31,14 @@
             @if (Auth::guest())
                 <p><a href="/login1">Login</a></p>
             @else
+          
             <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
-            <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
+            <p class="dropdown-content">
+              <a id="logoutButton" href="#">Logout</a>
+              @if (Auth::user()->role == "admin")
+              <a href="/courses/1">Admin Panel</a>
+              @endif
+            </p>
             @endif
         </div>
         <div class="dropdown-overlay"></div>

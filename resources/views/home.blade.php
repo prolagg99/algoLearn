@@ -45,6 +45,9 @@
                 @else
                 <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
                 <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
+                @if (Auth::user()->role == "user")
+                <a href="/courses/1">Admin Panel</a>
+                @endif
                 @endif
             
             </div>
