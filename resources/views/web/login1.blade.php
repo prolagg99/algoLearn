@@ -38,7 +38,7 @@
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
             @endif
-      <input type="submit" name="" value="{{ __('Login') }}">
+      <input type="submit" name="" value="Login">
       <div class="inputBox"><p><a href="{{ Cookie::get('lastpage2') }}">Retour</a></p>
       </div>
 
@@ -52,10 +52,6 @@
         <h4><a href="/register"> J'ai pas de compte </a></h4>
     
 	</form>
-    
-
-
-
 
 </div>
    </body>

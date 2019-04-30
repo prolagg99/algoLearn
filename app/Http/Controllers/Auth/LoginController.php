@@ -26,11 +26,11 @@ class LoginController extends Controller
      * @var string
      */
     protected function redirectTo()
-    {
-        if(Auth::user()->role=='admin') {
-          return "/home";
+    {    
+      if(Auth::user()->role=='admin') {
+          return "/admin/welcome";
         }else{
-          return "/chapitres";
+          return "/home";
         }
     }
     

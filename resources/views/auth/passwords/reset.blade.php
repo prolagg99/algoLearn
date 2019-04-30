@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta keywords="html,learn,teach"/>
-	<link rel="stylesheet" type="text/css" href="assets/choisirnvmdpstyle.css">
+	<link rel="stylesheet" type="text/css" href={{ asset('css/choisirnvmdpstyle.css') }}>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
@@ -21,7 +21,7 @@
                     <input id="" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('email') }}</strong>
+                            <strong style="color: rgb(255, 204, 0);">{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
                     <label> Enter votre email </label>
@@ -31,7 +31,7 @@
                     <input id="" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('password') }}</strong>
+                            <strong style="color: rgb(255, 204, 0);">{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
                     <label> Enter un nouveau mot de passe </label>

@@ -1,108 +1,47 @@
+
 <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="assets/style1.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-        <title> Home </title>
+        <meta name="viewport" content="width=device-width, iitial-scale=1">
+        <title> Contact Us </title>
     </head>
     <body>
-    <div id="d">
-        
-    
-        <div id="d1">
-            
-      
-          
-        </div >
-        <div id="d2">
-    
-    
-        <div id="d2_1">
-      
-        </div>
-       <div class=l>
-      
-        <div id='d8'><img src="assets/images/5695.png" width="120" height="100" />
-        </div>
-    
-    
-            <ul>
-    
-            <li><a href="/">Acceuil</a></li>
-            <li><a href="/chapitres">Chapitres</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="/contact">contact</a></li>
-            <li><a href="#">simulateur</a></li>
-            </ul>
-            <br/><br/>
-            
-            <div class="inputBox" style="color : blue">
-    
-                @if (Auth::guest())
-                    <p><a href="/login1">Login</a></p>
-                @else
-                <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
-                <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
-                @endif
-            
-            </div>
-    <div class="dropdown-overlay"></div>
-    <form id="logoutform" method="POST" action="/logout">
-        @csrf
-    </form>
-    </div>-->
-    <!--<div class="hl">-->
+
         <div class="container">
             <div class="row">
-                <div class="col-md-10 contact-us">
-                    <h1>Contactez nous</h1>
-                    <hr>
-                    <form action="">
-                        <div class="form-group">
-                            <label name="email">Email:</label>
-                            <input id="email" name="email" class="form-control" > 
-                        </div>
+                <div class="col-md-12">
+                    <div class="contact-section">
+                        <h1>Contactez nous</h1>
+                        @if (Session::has('flash_message') )
+                            <div class="contact-form-text">{{ \Session::get('flash_message') }}</div>
+                        @endif
+                        <form action="/contact" class="contact-form" method="post">
+                            @csrf
+                            <input type="text" name="nom" placeholder="Votre nom"  class="contact-form-text form-control{{ $errors->has('nom') ? ' is-invalid' : '' }}" value="{{ old('nom') }}" required autofocus>
+                            
+                            <input type="email" name="email" class="contact-form-text form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ auth()->user()->email }}" required placeholder="Votre email" > 
+                            
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong style="color: rgb(255, 204, 0);">{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
 
-                        <div class="form-group">
-                            <label name="subject">Sujet:</label>
-                            <input id="subject" name="subject" class="form-control" > 
-                        </div>
-
-                        <div class="form-group">
-                            <label name="email">Message:</label>
-                            <textarea name="message" id="message" class="form-control" cols="30" rows="10">Tapez votre message ici</textarea> 
-                        </div>
-
-                        <input type="submit" value="Envoyer" class="btn btn-success"> 
-                    </form>
+                            <input type="text" name="sujet" class="contact-form-text form-control{{ $errors->has('sujet') ? ' is-invalid' : '' }}" value="{{ old('sujet') }}" required placeholder="Votre Sujet" > 
+                            <textarea name="message"  class="contact-form-text form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" value="{{ old('message') }}" required placeholder="Votre Message"  cols="30" rows="10" placeholder="Tapez votre message ici"></textarea> 
+                            
+                            <input type="submit" class="contact-form-btn" value="Envoyer">
+                            <a href="/" type="submit" class="contact-form-btn back" style="float:left;">Anuulé</a>
+                            
+                        </form> 
+                        
+                     </div>
                 </div>
             </div>
         </div>
+     
 
- 
-    <!-- ------------------>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function(){
-            
-            $('#dropdown-opener').click(function(){
-                $('.dropdown-content').fadeToggle();
-                $('.dropdown-overlay').toggle();
-            });
-    
-            $('.dropdown-overlay').click(function() {
-                $('.dropdown-content').fadeOut();
-                $('.dropdown-overlay').hide();
-            });
-    
-            $('#logoutButton').click(function(){
-                $('#logoutform').submit();
-            });
-        });
-    
-    </script>
     </body>
     </html>

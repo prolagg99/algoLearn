@@ -33,14 +33,14 @@
             <li><a href="/">Acceuil</a></li>
             <li><a href="/chapitres">Chapitres</a></li>
             <li><a href="#">about</a></li>
-            <li><a href="/contact">contact</a></li>
+            <li><a href="/contact/create">contact</a></li>
             <li><a href="#">simulateur</a></li>
             </ul>
             <br/><br/>
             
             <div class="inputBox" style="color : blue">
                 @if (Auth::guest())
-                    <p><a href="/login1">Login</a></p>
+                    <p><a href="/login">Login</a></p>
                 @else
               
                 <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
@@ -66,8 +66,8 @@
                 <!--<button id="buttonone"> like share </button>
                 <button id="buttontwo"> Subscribe </button> -->
                  <div class="btn">  
-     <div class="btn1"><a href="/register">inscrer</a></div>
-     <div class="btn2"><a href="">Login</a></div>
+     <div class="btn1"><a href="/register">S'inscrer</a></div>
+     <div class="btn2"><a href="/login">Login</a></div>
      <div class="btn3"><a href="/chapitres">Start </a></div>
       </div>
             </div>

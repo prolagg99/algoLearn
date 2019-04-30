@@ -23,13 +23,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/contact', function(){
-    return view('contact-us');
-});
+Route::get('/contact/create', 'ContactController@create')->middleware('auth');
+Route::post('/contact', 'ContactController@store');
 
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
 
-Route::get('/login1', function(){
+Route::get('/login', function(){
     return view('web.login1');
 });
 

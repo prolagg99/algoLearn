@@ -11,7 +11,7 @@
 	<div id="d">
 		<div class="box">
             @if (session('status'))
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success" role="alert" style="color: rgb(255, 204, 0);">
                     {{ session('status') }}
                 </div>
             @endif
@@ -29,7 +29,7 @@
                 </div>      
                 <a href=""><input type="submit" name="" value="Envoyer"></a>
                 <div class="inputBox">
-                    <p><a href="/login1">Retour</a></p>
+                    <p><a href="/login">Retour</a></p>
                 </div>
             </form>
         </div>

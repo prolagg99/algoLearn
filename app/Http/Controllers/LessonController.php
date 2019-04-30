@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\lesson;
+use Illuminate\Support\Facades\Cookie;
 
 class LessonController extends Controller
 {
@@ -19,6 +20,7 @@ class LessonController extends Controller
                         ->where('chapter_id', $chapter_id)
                         ->get();
 
+        Cookie::queue('lastpage3', '/admin/1/{{$chapter_id}}/lessons', 3600);
         return view('lesson_view.lesson-index',[
             'lesson'    => $lesson,
             'chapter_id'=> $chapter_id
@@ -65,7 +67,7 @@ class LessonController extends Controller
     public function show($id)
     {
         $lesson = lesson::findOrfail($id);
-
+       
         return view('lesson_view.lesson-show', [
             'lesson' => $lesson
         ]);
