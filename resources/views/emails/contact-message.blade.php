@@ -1,5 +1,2 @@
-
-
-@foreach ($message as $item)
-    {{$item}}
-@endforeach
+<h1> {{$sujet}}</h1>
+<p> {{$message}} </p>

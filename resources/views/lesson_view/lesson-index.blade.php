@@ -35,6 +35,7 @@
                                             {!! $item->details !!}
                                             <p>
                                             <a href="/admin/lessons/{{ $item->id }}"><button type="submit" class="btn btn-info">Read More</button></a>
+                                            <a href="/admin/welcome/{{$item->id}}/quiz/qsts"><button type="submit" class="btn btn-info">Show Quiz</button></a>
                                             </p>
                                         </td>
                                         <td >

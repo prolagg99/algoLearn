@@ -13,9 +13,9 @@ class CreateChapterQuizzesTable extends Migration
      */
     public function up()
     {      
-        Schema::create('chapter_quizzes', function (Blueprint $table) {
+        Schema::create('Chapter_quizzes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('chapter_id');
+            $table->bigInteger('lesson_id');
             $table->string('title',60);
         });
     }

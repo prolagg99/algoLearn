@@ -41,9 +41,12 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        
+        dd($request->input('sujet'),$request->input('message'));
       Mail::send('emails.contact-message', [
-          'message' => $request->message],
+          'message' => $request->input('message'),
+          'sujet'   => $request->input('sujet')
+        ],
+        
         function($mail) use($request){
             $mail->from($request->email, $request->nom);
             $mail->to('pro.lagg99@gmail.com')->subject('ALGOlearn message');

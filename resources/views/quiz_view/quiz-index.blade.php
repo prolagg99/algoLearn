@@ -9,6 +9,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Quizzes</div>
+                
 
                 <div class="card-body">
                    
@@ -20,7 +21,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($chapter_quizzes as $item)
+                                    @foreach($lesson_quizzes as $item)
                                     <tr>
                                         <td>{{$item->title}}</td>
                                         <td>
@@ -31,6 +32,9 @@
                                         </td>
                                     </tr>
                                     @endforeach
+                                    <p>
+                                        
+                                    </p>
                             
                                 </tbody>
                             </table>

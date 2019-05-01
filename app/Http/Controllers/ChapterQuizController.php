@@ -11,14 +11,20 @@ class ChapterQuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request,$chapter_id)
+    public function index(Request $request,$lesson_id)
     {
-       $chapter_quizzes = chapter_quizzes::where('chapter_id',$chapter_id)->get();
+       $lesson_quizzes = chapter_quizzes::where('lesson_id',$lesson_id)->get();
        return view('quiz_view.quiz-index', [
-           'chapter_quizzes' => $chapter_quizzes
+           'lesson_quizzes' => $lesson_quizzes
        ]);
+    }
 
-
+    public function index2(Request $request,$lesson_id)
+    {
+       $lesson_quizzes = chapter_quizzes::where('lesson_id',$lesson_id)->get();
+       return view('welcome-quiz-qsts', [
+           'lesson_quizzes' => $lesson_quizzes
+       ]);
     }
 
     /**
@@ -26,10 +32,10 @@ class ChapterQuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request,$chapter_id)
+    public function create(Request $request,$lesson_id)
     {
         return view('quiz_view.quiz-create',[
-            'chapter_id' => $chapter_id
+            'lesson_id' => $lesson_id
         ]);
     }
 
@@ -39,17 +45,26 @@ class ChapterQuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$chapter_id)
+    public function store(Request $request,$lesson_id)
     {
         $title = $request->input('title');
 
-        $chapter_quizzes = new chapter_quizzes;
-        $chapter_quizzes->chapter_id = $chapter_id;
-        $chapter_quizzes->title = $title;
-        $chapter_quizzes->save();
+        $lesson_quizzes = new chapter_quizzes;
+        $lesson_quizzes->lesson_id = $lesson_id;
+        $lesson_quizzes->title = $title;
+        $lesson_quizzes->save();
 
         return back();
     }
+    public function show($id)
+    {
+        $lesson_quizzes = Chapter_quizzes::findOrfail($id);
+
+        return view('quiz_view.quiz-show', [
+            'lesson_quizzes' => $lesson_quizzes
+        ]);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -59,9 +74,9 @@ class ChapterQuizController extends Controller
      */
     public function edit($id)
     {
-        $chapter_quizzes = chapter_quizzes::findOrfail($id); 
+        $lesson_quizzes = chapter_quizzes::findOrfail($id); 
         return view('quiz_view.quiz-edit',[
-            'chapter_quizzes' => $chapter_quizzes 
+            'lesson_quizzes' => $lesson_quizzes 
         ]);
     }
 
@@ -75,10 +90,10 @@ class ChapterQuizController extends Controller
     public function update(Request $request, $id)
     {
         $title = $request->input('title');
-        $chapter_quizzes = chapter_quizzes::findOrfail($id); 
+        $lesson_quizzes = chapter_quizzes::findOrfail($id); 
 
-        $chapter_quizzes->title = $title;
-        $chapter_quizzes->save(); 
+        $lesson_quizzes->title = $title;
+        $lesson_quizzes->save(); 
     }
 
     /**
@@ -89,8 +104,8 @@ class ChapterQuizController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $chapter_quizzes = chapter_quizzes::findOrfail($id);
-        $chapter_quizzes->delete();
+        $lesson_quizzes = chapter_quizzes::findOrfail($id);
+        $lesson_quizzes->delete();
 
         return back();
     }

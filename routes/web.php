@@ -44,6 +44,7 @@ Route::get('/password/reset', function(){
 // admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::get('/welcome','ChapterController@index2');
+    Route::get('/welcome/{lesson_id}/quiz/qsts','WebPages@viewLessonsPage2');
     Route::resource('/courses', 'CourseController');
     // chapters ----------------------------------------
 
@@ -85,10 +86,12 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
 
     // chapters quiz ------------------------------------------------------
 
-    Route::get('/{chapter_id}/quizzes','ChapterQuizController@index');
+    Route::get('/{lesson_id}/quizzes','ChapterQuizController@index');
+    Route::get('/quizzes/{id}','ChapterController@show');
 
-    Route::get('/{chapter_id}/quizzes/create','ChapterQuizController@create');
-    Route::post('/{chapter_id}/quizzes','ChapterQuizController@store');
+
+    Route::get('/{lesson_id}/quizzes/create','ChapterQuizController@create');
+    Route::post('/{lesson_id}/quizzes','ChapterQuizController@store');
 
     Route::get('/quizzes/{id}/edit','ChapterQuizController@edit');
     Route::post('/quizzes/{id}','ChapterQuizController@update');

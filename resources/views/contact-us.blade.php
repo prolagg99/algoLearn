@@ -19,9 +19,9 @@
                         @endif
                         <form action="/contact" class="contact-form" method="post">
                             @csrf
-                            <input type="text" name="nom" placeholder="Votre nom"  class="contact-form-text form-control{{ $errors->has('nom') ? ' is-invalid' : '' }}" value="{{ old('nom') }}" required autofocus>
+                            <input type="text" name="nom" placeholder="Votre nom"  class="contact-form-text form-control{{ $errors->has('nom') ? ' is-invalid' : '' }}" value="{{ auth()->user()->name }}" required autofocus disabled>
                             
-                            <input type="email" name="email" class="contact-form-text form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ auth()->user()->email }}" required placeholder="Votre email" > 
+                            <input type="email" name="email" class="contact-form-text form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ auth()->user()->email }}" required placeholder="Votre email" disabled> 
                             
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">

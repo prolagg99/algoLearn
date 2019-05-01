@@ -55,7 +55,7 @@ $factory->define(lesson::class, function (Faker $faker) {
         'details' => $faker->paragraph
     ];
 });
-
+/*
 $factory->define(lesson_questions::class, function (Faker $faker) {
     return [
         'lesson_id' => '',
@@ -65,16 +65,17 @@ $factory->define(lesson_questions::class, function (Faker $faker) {
         'right_answer' => $faker->word
     ];
 });
-
+*/
 $factory->define(chapter_quizzes::class, function (Faker $faker) {
     return [
-        'chapter_id' => '',
+        'lesson_id' => '',
         'title' => $faker->word
     ];
 });
 
 $factory->define(chapter_quiz_questions::class, function (Faker $faker) {
     return [
+        'quiz_id' => '',
         'quiz_id' => '',
         'question' => $faker->word,
         'type' => 'list',

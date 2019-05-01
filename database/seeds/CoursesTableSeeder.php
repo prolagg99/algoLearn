@@ -12,7 +12,7 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\course::class, 10)->create()->each(function($course) {
+     /*   factory(App\course::class, 10)->create()->each(function($course) {
 
             factory(App\chapter::class, 10)->create([
                 'course_id' => $course->id,
@@ -28,7 +28,7 @@ class CoursesTableSeeder extends Seeder
                 });
 
                 factory(App\chapter_quizzes::class, 1)->create([
-                    'chapter_id' => $chapter->id, 
+                    'lesson_id' => $lesson->id, 
                 ])->each(function($chapter_quizzes){
                     factory(App\chapter_quiz_questions::class, 1)->create([
                         'quiz_id' => $chapter_quizzes->id,
@@ -39,6 +39,28 @@ class CoursesTableSeeder extends Seeder
             
             
         });
-    }
+    } */
+
+    factory(App\course::class, 10)->create()->each(function($course) {
+
+        factory(App\chapter::class, 10)->create([
+            'course_id' => $course->id,
+        ])->each(function($chapter) {
+            factory(App\lesson::class, 6)->create([
+                'chapter_id' => $chapter->id, 
+                'course_id' => $chapter->course_id
+            ]) ->each(function($lesson){
+                factory(App\chapter_quizzes::class, 1)->create([
+                    'lesson_id' => $lesson->id, 
+                ])->each(function($chapter_quizzes){
+                    factory(App\chapter_quiz_questions::class, 20)->create([
+                        'quiz_id' => $chapter_quizzes->id,
+                        'lesson_id' => $chapter_quizzes->lesson_id, 
+                    ]);
+                });
+            });
+        });   
+    });
+}
     
 }

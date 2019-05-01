@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Foundation\Console\ServeCommand;
 
 class CreateLessonQuizQuestionsTable extends Migration
 {
@@ -13,8 +14,9 @@ class CreateLessonQuizQuestionsTable extends Migration
      */
     public function up()
     {         
-        Schema::create('chapter_quiz_questions', function (Blueprint $table) {
+        Schema::create('lesson_quiz_questions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('lesson_id');
             $table->bigInteger('quiz_id');
             $table->text('question');
             $table->enum('type', ['list', 'input']);
