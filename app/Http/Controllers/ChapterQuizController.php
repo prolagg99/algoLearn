@@ -54,7 +54,7 @@ class ChapterQuizController extends Controller
         $lesson_quizzes->title = $title;
         $lesson_quizzes->save();
 
-        return back();
+        return redirect('/admin/welcome/'.$lesson_id.'/quiz/qsts');
     }
     public function show($id)
     {

@@ -24,10 +24,11 @@ class ChapterQuizQuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request,$quiz_id)
+    public function create(Request $request,$lesson_id,$quiz_id)
     {
         return view('quiz_qst_view.quiz-qst-create',[
-            'quiz_id'=>$quiz_id
+            'quiz_id'   =>$quiz_id,
+            'lesson_id' =>$lesson_id
         ]);
     }
 
@@ -37,7 +38,7 @@ class ChapterQuizQuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$quiz_id)
+    public function store(Request $request,$lesson_id,$quiz_id)
     {
         $question = $request->input('question');
         $type = $request->input('type');
@@ -46,6 +47,7 @@ class ChapterQuizQuestionController extends Controller
 
         $chapter_quiz_questions = new chapter_quiz_questions;
         $chapter_quiz_questions->quiz_id = $quiz_id;
+        $chapter_quiz_questions->lesson_id = $lesson_id;
         $chapter_quiz_questions->question = $question;
         $chapter_quiz_questions->type = $type;
         $chapter_quiz_questions->options = $options;

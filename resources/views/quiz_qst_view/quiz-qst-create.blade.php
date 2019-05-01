@@ -12,7 +12,7 @@
     
                     <div class="card-body">
                        
-                            <form action="/admin/{{ $quiz_id }}/qsts" method="POST">
+                            <form action="/admin/{{ $lesson_id }}/{{ $quiz_id }}/qsts" method="POST">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="">quiz question</label>
@@ -36,6 +36,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Create</button>
+                                    <a href="/admin/welcome/{{ $lesson_id }}/quiz/qsts" class="btn btn-primary">Back</a>
                                 </div>
                             </form>
                         

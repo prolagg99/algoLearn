@@ -16,7 +16,7 @@
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="">question</label>
-                                <textarea class="form-control" name="question" rows="5" value="{{$chapter_quiz_questions->question}}"></textarea>
+                                <textarea class="form-control" name="question" rows="5" value="">{{$chapter_quiz_questions->question}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">type</label>
@@ -32,6 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">edit</button>
+                                <a href="/admin/welcome/{{ $chapter_quiz_questions->lesson_id }}/quiz/qsts" class="btn btn-primary">Back</a>
                             </div>
                         </form>
                     

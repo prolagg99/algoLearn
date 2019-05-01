@@ -103,8 +103,8 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
 
     Route::get('/{quiz_id}/qsts','ChapterQuizQuestionController@index');
 
-    Route::get('/{quiz_id}/qsts/create','ChapterQuizQuestionController@create');
-    Route::post('/{quiz_id}/qsts','ChapterQuizQuestionController@store');
+    Route::get('/{lesson_id}/{quiz_id}/qsts/create','ChapterQuizQuestionController@create');
+    Route::post('/{lesson_id}/{quiz_id}/qsts','ChapterQuizQuestionController@store');
 
     Route::get('/qsts/{id}/edit','ChapterQuizQuestionController@edit');
     Route::post('/qsts/{id}','ChapterQuizQuestionController@update');

@@ -19,7 +19,8 @@
                                 <input type="text" name="title" class="form-control" value="{{$lesson_quizzes->title}}">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">edit</button>
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                                <a href="/admin/welcome/{{$lesson_quizzes->lesson_id}}/quiz/qsts" class="btn btn-primary">Back</a>
                             </div>
                         </form>
                     

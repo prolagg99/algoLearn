@@ -20,6 +20,7 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Create</button>
+                                <a href="/admin/welcome/{{ $lesson_id }}/quiz/qsts" class="btn btn-primary">Back</a>
                             </div>
                         </form>
                     
