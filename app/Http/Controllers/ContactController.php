@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use PharIo\Manifest\Email;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
-
+use PhpParser\Node\Expr\New_;
+use App\Mail\contact as AppContact;
 
 class ContactController extends Controller
 {
@@ -41,17 +42,15 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->input('sujet'),$request->input('message'));
-      Mail::send('emails.contact-message', [
-          'message' => $request->input('message'),
-          'sujet'   => $request->input('sujet')
-        ],
-        
-        function($mail) use($request){
-            $mail->from($request->email, $request->nom);
-            $mail->to('pro.lagg99@gmail.com')->subject('ALGOlearn message');
-        });
+        $mail_content = [
+            'nom'         => $request->input('nom'),
+            'email'       => $request->input('email'),
+            'sujet'       => $request->input('sujet'),
+            'message'     => $request->input('message')
+        ];
 
+        Mail::to('pro.lagg99@gmail.com')->send(new AppContact($mail_content));
+        
       return back()->with('flash_message','Mrc pour votre message.');
     }
 

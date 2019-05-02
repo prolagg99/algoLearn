@@ -54,8 +54,9 @@ class ChapterQuizController extends Controller
         $lesson_quizzes->title = $title;
         $lesson_quizzes->save();
 
-        return redirect('/admin/welcome/'.$lesson_id.'/quiz/qsts');
+        return back();
     }
+
     public function show($id)
     {
         $lesson_quizzes = Chapter_quizzes::findOrfail($id);
@@ -94,6 +95,7 @@ class ChapterQuizController extends Controller
 
         $lesson_quizzes->title = $title;
         $lesson_quizzes->save(); 
+        return back();
     }
 
     /**

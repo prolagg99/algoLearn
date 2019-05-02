@@ -21,7 +21,7 @@ Route::get('/', function () {
 
     Cookie::queue('lastpage2', '/', 3600);
     return view('home');
-});
+})->name('home');
 
 Route::get('/contact/create', 'ContactController@create')->middleware('auth');
 Route::post('/contact', 'ContactController@store');
@@ -101,7 +101,7 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
     // chapters quiz questions ---------------------------------------------
 
 
-    Route::get('/{quiz_id}/qsts','ChapterQuizQuestionController@index');
+    Route::get('/{lesson_id}/{quiz_id}/qsts','ChapterQuizQuestionController@index');
 
     Route::get('/{lesson_id}/{quiz_id}/qsts/create','ChapterQuizQuestionController@create');
     Route::post('/{lesson_id}/{quiz_id}/qsts','ChapterQuizQuestionController@store');

@@ -39,6 +39,7 @@
                         
                         <?php $x=1 ?>
                         @foreach ($item->quiz_qsts as $quiz_qsts)
+                        <hr>
                         <p style="display:inline;"> Qst {{$x}} : {!! $quiz_qsts->question !!}</p>
                         <div style="display: inline-block; float:right;">
                                 <a class="btn btn-success" href="/admin/qsts/{{$quiz_qsts->id}}/edit" role="button">Edit</a>

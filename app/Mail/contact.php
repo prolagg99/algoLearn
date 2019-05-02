@@ -10,18 +10,16 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class contact extends Mailable
 {
     use Queueable, SerializesModels;
-    public $sujet;
-    public $message;
+    public $mail_content;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($message,$sujet)
+    public function __construct($mail_content)
     {
-        $this->sujet =$sujet ;
-        $this->message = $message;
+        $this->mail_content =$mail_content ;
     }
 
     /**
@@ -32,6 +30,8 @@ class contact extends Mailable
     public function build()
     {
         return $this->from('pro.lagg99@gmail.com')
-                    ->view('contact-us');
+                    ->subject('ALGOlearn message')
+                    ->view('emails.contact-message')
+                    ->with('mail_content',$this->mail_content);
     }
 }
