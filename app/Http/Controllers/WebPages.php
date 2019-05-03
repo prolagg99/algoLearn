@@ -15,7 +15,7 @@ class WebPages extends Controller
     public function viewLessonsPage() {
 
         
-        $chapters = chapter::where('course_id', 1)->with('lessons')->with('quiz')->with('quiz_qst')->get();
+        $chapters = chapter::where('course_id', 1)->with('lessons')->get();
         
         
         Cookie::queue('lastpage2', '/chapitres', 3600);
@@ -24,13 +24,26 @@ class WebPages extends Controller
         ]);
     }
 
-    public function viewLessonsPage2(request $request) {
+    public function viewQuizPage(request $request) {
 
         $lesson_id=$request->lesson_id;
         
         $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->get();
        
         return view("welcome-quiz-qsts", [
+            'quiz' => $quiz
+        ]);
+    }
+
+    public function viewLessonDetails(request $request) {
+
+        $chapters = chapter::where('course_id', 1)->with('lessons')->get();
+        
+        $lesson_id=$request->lesson_id;
+        $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->get();
+       
+        return view("web.Cours1", [
+            'chapters' => $chapters,
             'quiz' => $quiz
         ]);
     }

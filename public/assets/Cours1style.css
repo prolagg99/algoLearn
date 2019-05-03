@@ -1,0 +1,453 @@
+
+body{
+     margin:0;
+     padding: 0;
+     background-image: url('images/ler2.jpg');
+     
+
+}
+.l{
+   background: white;
+   opacity: 0.7;
+ height: 110px;
+ /* + */
+  
+   
+
+}
+#d8{
+ 
+
+  /*margin-top: 10px;*/
+ /* padding-top: 10px;*/
+padding-left: 100px;
+margin-left: 0px;
+
+}
+.page{
+	background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  height: 550px;
+  padding: 0;
+  margin-top: -10px;
+}
+#d1{
+     float: right;
+     margin-right: 390px;
+     margin-top: -90px;
+     display: inline-block;
+
+}
+
+
+#d1 h5{
+	font-size: 29px;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 320px;
+  /*margin-left: -50px;*/
+  float: right;
+  margin-right: -5px;
+ margin-top: -72px;
+}
+#d1 h3{
+	font-size:32px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700px;
+  margin-right: 490px;
+  margin-left: 100px;
+  margin-top: 25px;
+
+}
+#d1 h4{
+	font-size:29px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: -65px;
+  /*margin-left: 190px;*/
+  margin-left: 290px;
+
+}
+.p1{
+	background-color: #ffffff;
+	height: 485px;
+	width: 950px;
+	margin-top: 10px;
+	margin-left: 200px;/*200*/
+	padding-top: 10px;
+	margin-right: 200px;
+	opacity: 0.9;
+	/*border-radius: 25px:
+	border:white;*/
+	border-radius: 15px;
+
+}
+.p2{
+	/*background-color:  #6d0800;*/
+	background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+	
+	height: 50px;
+	width: 950px;
+	margin-top: -10px;
+	padding-top: 0;
+}
+/************************* retour avec flesh nt3 lwst page 1 *********************/
+.page .p1 ul{
+	position: absolute;
+	/*top: 92%;*/
+	top:115%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	margin:0;
+    padding: 0;
+    display: flex;
+}
+.page .p1 ul li{
+	list-style: none;
+	width: 80px;
+	height: 80px;
+	background:#262626;
+    margin: 0 10px;
+    border-radius: 50%;
+    transition: .5s;
+}
+.page .p1 ul li:hover{
+
+	background :/*#0070ff*/#6d0800;
+}
+.page .p1 ul li span{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 4px solid #fff;
+	transition: .5s;
+
+}
+.page .p1 ul li.next span{
+	top:50%;
+	right: 20%;
+	transform: translateY(-50%) rotate(-45deg);
+	border-left: none;
+	border-top: none;
+}
+.page .p1 ul li.next:hover span{
+	right: 16%;
+}
+.page .p1 ul li.next span:before{
+	content: '';
+	position: absolute;
+	width:38px;
+	height: 4px; 
+	background: #fff;
+	transform-origin: right;
+	transform: rotate(45deg) translate(0px,25px) scaleX(0);
+    transition: .5s;
+}
+.page .p1 ul li.next:hover span:before{
+	transform: rotate(45deg) translate(0px,25px) scaleX(1);
+
+}
+
+/***********/
+.page .p1 ul li.prev span{
+	top:50%;
+	left: 20%;
+	transform: translateY(-50%) rotate(-45deg);
+	border-right: none;
+	border-bottom: none;
+}
+.page .p1 ul li.prev:hover span{
+	left: 16%;
+}
+.page .p1 ul li.prev span:before{
+	content: '';
+	position: absolute;
+	width:38px;
+	height: 4px; 
+	background: #fff;
+	transform-origin: left;
+	transform: rotate(45deg) translate(-2px,-1px) scaleX(0);
+    transition: .5s;
+}
+.page .p1 ul li.prev:hover span:before{
+	transform: rotate(45deg) translate(-2px,-1px) scaleX(1);
+
+}
+
+/***********   retour avec flesh nt3 jenb ***********************/
+ /*.retour ul{
+	position: absolute;
+	top: 92%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	margin:0;
+    padding: 0;
+    display: flex;
+}
+ .retour ul li{
+	list-style: none;
+	width: 80px;
+	height: 80px;
+	background:#262626;
+    margin: 0 10px;
+    border-radius: 50%;
+    transition: .5s;
+}
+ .retour ul li:hover{
+
+	background :#0070ff;
+}
+ .retour ul li span{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 4px solid #fff;
+	transition: .5s;
+
+}
+
+ .retour ul li.prev1 span{
+	top:50%;
+	left: 20%;
+	transform: translateY(-50%) rotate(-45deg);
+	border-right: none;
+	border-bottom: none;
+}
+ .retour ul li.prev1:hover span{
+	left: 16%;
+}
+ .retour ul li.prev1 span:before{
+	content: '';
+	position: absolute;
+	width:38px;
+	height: 4px; 
+	background: #fff;
+	transform-origin: left;
+	transform: rotate(45deg) translate(-2px,-1px) scaleX(0);
+    transition: .5s;
+}
+ .retour ul li.prev1:hover span:before{
+	transform: rotate(45deg) translate(-2px,-1px) scaleX(1);
+
+}*/
+/******************************* retour avec flesh nt3 jnb ************/
+ .p3 ul{
+	position: absolute;
+	top: 60%;
+	left: 0%;
+	transform: translate(-50%,-50%);
+	margin:0;
+    padding: 0;
+    display: flex;
+    float: left;
+    padding-left: -100px;
+    margin-right:500px; 
+    margin-left: 100px;
+
+
+}
+  .p3 ul li{
+	list-style: none;
+	width: 80px;
+	height: 80px;
+	background:#262626;
+    margin: 0 10px;
+    border-radius: 50%;
+    transition: .5s;
+}
+  .p3 ul li:hover{
+
+	background :#6d0800;
+}
+  .p3 ul li span{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 4px solid #fff;
+	transition: .5s;
+
+}
+
+ .p3 ul li.prov span{
+	top:50%;
+	left: 40%;
+	transform: translateY(-50%) rotate(-45deg);
+	border-right: none;
+	border-bottom: none;
+}
+ .p3 ul li.prov:hover span{
+	left: 30%;
+}
+ .p3 ul li.prov span:before{
+	content: '';
+	position: absolute;
+	width:38px;
+	height: 4px; 
+	background: #fff;
+	transform-origin: left;
+	transform: rotate(45deg) translate(-2px,-1px) scaleX(0);
+    transition: .5s;
+}
+ .p3 ul li.prov:hover span:before{
+	transform: rotate(45deg) translate(-2px,-1px) scaleX(1);
+
+}
+
+
+/********************** avancement simple *************/
+/**** pages ***/
+.right{
+	width: 25px;
+	height: 25px;
+	transition: .5s;
+	float: left;
+	box-shadow: -2px 2px 0 rgba(255,255,255,.5);
+	cursor: pointer;
+	margin-left: 80px;
+	margin-top: 12px;
+}
+
+.right{
+	transform: rotate(225deg);
+}
+
+.right:hover{
+
+box-shadow: -2px 2px 0 rgba(255,255,255,1);
+
+	}
+.right.active{
+	box-shadow: -2px 2px 0 /*rgba(33,156,243,1)*/rgba(255,255,255,1);
+	
+}
+
+
+/**************** point d'intérrogation ******/
+
+
+ 
+
+
+  /******* place du cours (partie1) ********/
+  #partie1 {
+  	font-weight: 100;
+	position: relative;
+	max-width: 900px;
+	height: 315px;
+	display: :none;
+	border:2px solid black;/*2px*/
+	margin: 35px auto;
+	padding: 30px;
+	box-sizing: border-box;
+      
+}
+#partie1:after{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid black;/*2px*/
+	border-left: 2px solid black;/*2px*/
+	border-right: 0px solid black;
+	border-bottom: 0px solid black;
+	bottom: 100%;/* ltht*/
+	left: 8%;/* lbo3d nt3 lmo3ayan*/
+	margin-left: -25px;
+    content: '';
+    transform: rotate(45deg);
+    margin-bottom: -24px;/* bch ytl3 fl itar */
+    background: white;
+    display: :none;
+}
+/******************* place du cour (partie2)***/
+#partie2 {
+  	font-weight: 100;
+	position: relative;
+	max-width: 900px;
+	height: 315px;
+	display: :none;
+	border:2px solid black;/*2px*/
+	margin: 35px auto;
+	padding: 30px;
+	box-sizing: border-box;
+	display: block;
+      
+}
+#partie2:after{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid black;/*2px*/
+	border-left: 2px solid black;/*2px*/
+	border-right: 0px solid black;
+	border-bottom: 0px solid black;
+	bottom: 100%;/* ltht*/
+	left: 24.25%;/* lbo3d nt3 lmo3ayan*/
+	margin-left: -25px;
+    content: '';
+    transform: rotate(45deg);
+    margin-bottom: -24px;/* bch ytl3 fl itar */
+    background: white;
+    display: :none;
+}
+/************place du cours (partie3) ***********/
+#partie3 {
+
+  	font-weight: 100;
+	position: relative;
+	max-width: 900px;
+	height: 315px;
+	display: :none;
+	border:2px solid black;/*2px*/
+	margin: 35px auto;
+	padding: 30px;
+	box-sizing: border-box;
+	display: block;
+      
+}
+#partie3:after{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid black;/*2px*/
+	border-left: 2px solid black;/*2px*/
+	border-right: 0px solid black;
+	border-bottom: 0px solid black;
+	bottom: 100%;/* ltht*/
+	left: 40.5%;/* lbo3d nt3 lmo3ayan*/
+	margin-left: -25px;
+    content: '';
+    transform: rotate(45deg);
+    margin-bottom: -24px;/* bch ytl3 fl itar */
+    background: white;
+    display: :none;
+}
+/************* place du cour (partie4)***/
+#partie4 {
+  	font-weight: 100;
+	position: relative;
+	max-width: 900px;
+	height: 315px;
+	display: :none;
+	border:2px solid black;/*2px*/
+	margin: 35px auto;
+	padding: 30px;
+	box-sizing: border-box;
+	display: block;
+      
+}
+#partie4:after{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid black;/*2px*/
+	border-left: 2px solid black;/*2px*/
+	border-right: 0px solid black;
+	border-bottom: 0px solid black;
+	bottom: 100%;/* ltht*/
+	left: 58%;/* lbo3d nt3 lmo3ayan*/
+	margin-left: -25px;
+    content: '';
+    transform: rotate(45deg);
+    margin-bottom: -24px;/* bch ytl3 fl itar */
+    background: white;
+    display: :none;
+}

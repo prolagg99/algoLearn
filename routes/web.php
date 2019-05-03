@@ -18,7 +18,6 @@ Route::get('/lessons', 'WebPages@viewLessonsPage');
 // user routes --------------------------------------------------
 
 Route::get('/', function () {
-
     Cookie::queue('lastpage2', '/', 3600);
     return view('home');
 })->name('home');
@@ -27,6 +26,8 @@ Route::get('/contact/create', 'ContactController@create')->middleware('auth');
 Route::post('/contact', 'ContactController@store');
 
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
+Route::get('/cour/{chapter_id}/{lesson_id}', 'WebPages@viewLessonDetails')->middleware('auth');
+
 
 Route::get('/login', function(){
     return view('web.login1');
@@ -44,7 +45,7 @@ Route::get('/password/reset', function(){
 // admin routes -------------------------------------------------
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::get('/welcome','ChapterController@index2');
-    Route::get('/welcome/{lesson_id}/quiz/qsts','WebPages@viewLessonsPage2');
+    Route::get('/welcome/{lesson_id}/quiz/qsts','WebPages@viewQuizPage');
     Route::resource('/courses', 'CourseController');
     // chapters ----------------------------------------
 

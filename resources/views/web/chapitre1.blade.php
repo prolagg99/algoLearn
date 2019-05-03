@@ -66,7 +66,7 @@
       <a href="javascript:void(0)" class="closebtn" onclick="closeDialog({{$chapter->id}})">&times;</a>
       <div class="overlay-content">
         @foreach ($chapter->lessons as $lesson)
-          <a href="#"> {{$lesson->title}} </a>
+          <a href="/cour/{{$chapter->id}}/{{$lesson->id}}"> {{$lesson->title}} </a>
         @endforeach
       </div>
     </div>

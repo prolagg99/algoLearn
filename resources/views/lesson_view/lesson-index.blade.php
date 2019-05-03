@@ -32,7 +32,8 @@
                                     <tr>
                                         <td>{{$item->title}}</td>
                                         <td>
-                                            {!! $item->details !!}
+                                            <?php  $out = strlen($item->details) > 50 ? substr($item->details,0,120)."..." : $item->details; ?>
+                                            {!! $out !!}
                                             <p>
                                             <a href="/admin/lessons/{{ $item->id }}"><button type="submit" class="btn btn-info">Read More</button></a>
                                             <a href="/admin/welcome/{{$item->id}}/quiz/qsts"><button type="submit" class="btn btn-info">Show Quiz</button></a>
