@@ -26,12 +26,13 @@ Route::get('/contact/create', 'ContactController@create')->middleware('auth');
 Route::post('/contact', 'ContactController@store');
 
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
-Route::get('/cour/{chapter_id}/{lesson_id}', 'WebPages@viewLessonDetails')->middleware('auth');
+Route::get('/cour/{lesson_id}', 'WebPages@viewLessonDetails')->middleware('auth');
 
 
 Route::get('/login', function(){
     return view('web.login1');
 });
+Auth::routes();
 
 Route::get('/inscription', function(){
     return view('web.inscription');
@@ -113,6 +114,5 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::post('/qsts/{id}/delete','ChapterQuizQuestionController@destroy');
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

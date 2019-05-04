@@ -16,7 +16,7 @@
         
         <h2>Connexion</h2>
         
-        <form method="POST" action="{{ route('login') }}" autocomplete="false">
+        <form method="POST" action="/login" autocomplete="false">
                 @csrf
             
             <div class="inputBox">

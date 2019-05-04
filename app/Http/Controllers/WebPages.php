@@ -35,16 +35,16 @@ class WebPages extends Controller
         ]);
     }
 
-    public function viewLessonDetails(request $request) {
+    public function viewLessonDetails(request $request, $lesson_id) {
 
-        $chapters = chapter::where('course_id', 1)->with('lessons')->get();
-        
-        $lesson_id=$request->lesson_id;
+        $lesson = lesson::findOrfail($lesson_id);
+        $chapter = chapter::findOrfail($lesson->chapter_id);
         $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->get();
        
         return view("web.Cours1", [
-            'chapters' => $chapters,
-            'quiz' => $quiz
+            'chapter' => $chapter,
+            'quiz' => $quiz,
+            'lesson' => $lesson,
         ]);
     }
 
