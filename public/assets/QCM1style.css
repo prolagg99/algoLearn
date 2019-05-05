@@ -1,7 +1,7 @@
 body{
      margin:0;
      padding: 0;
-     background-image: url('ler2 (Copier).jpg');
+     background-image: url('images/ler2.jpg');
      
   
      
@@ -168,12 +168,13 @@ margin-left: 0px;
   margin-top: 12px;
 }
 /***************** check de l'envoie ***********/
-.check ul {
+.check{
+  
+}
 
- 
+.check .check-btn {
   position: relative;
   margin: 0;
-  margin-top: 380px;
   margin-left: 855px;
   padding: 0;
   display: flex;

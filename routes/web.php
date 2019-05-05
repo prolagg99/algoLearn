@@ -27,6 +27,7 @@ Route::post('/contact', 'ContactController@store');
 
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
 Route::get('/cour/{lesson_id}', 'WebPages@viewLessonDetails')->middleware('auth');
+Route::get('/cour/{lesson_id}/Quiz/Qsts', 'WebPages@viewQuizQsts');
 
 
 Route::get('/login', function(){

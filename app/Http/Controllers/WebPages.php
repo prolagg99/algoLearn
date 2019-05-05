@@ -39,14 +39,24 @@ class WebPages extends Controller
 
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
-        $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->get();
        
         return view("web.Cours1", [
             'chapter' => $chapter,
-            'quiz' => $quiz,
             'lesson' => $lesson,
         ]);
     }
 
+    public function viewQuizQsts(request $request, $lesson_id) {
+        
+        $lesson = lesson::findOrfail($lesson_id);
+        $chapter = chapter::findOrfail($lesson->chapter_id);
+        $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->first();
+       
+        return view("web.QCM1", [
+            'chapter' => $chapter,
+            'lesson' => $lesson,
+            'quiz' => $quiz
+        ]);
+    }
     
 }

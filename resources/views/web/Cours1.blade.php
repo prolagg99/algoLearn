@@ -99,17 +99,21 @@
     <div id="partie5" class="tabcontent"  style="display: none"> <h3>Page 5</h3>
     <div>
 </div>
-     
-              <ul>
-                         <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
-                          <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
-                  </ul>    
+
+    <ul>
+        <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
+        <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
+    </ul>    
     </div>
       <script >
-        var lessons_text = "{{$lesson->details}}";
-        lessons_text = "Content1 @@@ Content2 @@@ Content3 @@@"
+       
+        var lessons_text ="<?php echo  preg_replace("/[\r\n]*/","", addslashes($lesson->details)); ?>";
+         
+       
+       // addslashes($lesson->details);
+       // lessons_text = "Content1 @@@ Content2 @@@ Content3 @@@";
         var count = (lessons_text.match(/@@@/g) || []).length;
-
+        
         console.log(substring);
         if (count != 0 ){
           for (var x = 1; x <= count; x++){
@@ -128,9 +132,6 @@
           document.getElementById("partie1").getElementsByTagName("ul")[0].style.display = "none";
 
         }
-    
-      
-        
         console.log("test", count);
         //split content to 5 sections 
 
