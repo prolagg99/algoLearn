@@ -32,11 +32,19 @@ margin-left: 0px;
   margin-top: -10px;
 }
 #d1{
-     float: right;
-     margin-right: 390px;
-     margin-top: -90px;
-     display: inline-block;
+	margin-left: 238px;
+	margin-top: -96px;
+}
 
+#d1 h3{
+display: inline-block;
+font-family: 'Montserrat', sans-serif;
+font-size: 35px;
+}
+#d1 h4{
+font-family: 'Open Sans', sans-serif;
+display: inline-block;
+font-size: 25px;
 }
 
 
@@ -49,23 +57,7 @@ margin-left: 0px;
   margin-right: -5px;
  margin-top: -72px;
 }
-#d1 h3{
-	font-size:32px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700px;
-  margin-right: 490px;
-  margin-left: 100px;
-  margin-top: 25px;
 
-}
-#d1 h4{
-	font-size:29px;
-  font-family: 'Open Sans', sans-serif;
-  margin-top: -65px;
-  /*margin-left: 190px;*/
-  margin-left: 290px;
-
-}
 .p1{
 	background-color: #ffffff;
 	height: 485px;

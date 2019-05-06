@@ -46,7 +46,7 @@
      <div id="openp5" style="margin-left: 130px;" class="right none" onclick="openCity(event, 'partie5')"></div>
   </div>
  <div id='question'>
-                <a href="QCM1.html"> <i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:40px; margin-top: -42px;'></i>
+                <a href="/cour/{{request()->route('lesson_id')}}/Quiz/Qsts"> <i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:40px; margin-top: -42px;'></i>
                 </a>
 </div>
 
@@ -107,7 +107,7 @@
     </div>
       <script >
        
-        var lessons_text ="<?php echo  preg_replace("/[\r\n]*/","", addslashes($lesson->details)); ?>";
+        var lessons_text ='<?php echo  preg_replace('/[\r\n]*/','', addslashes($lesson->details)); ?>';
          
        
        // addslashes($lesson->details);

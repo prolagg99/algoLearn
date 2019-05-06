@@ -8,6 +8,7 @@ use App\chapter;
 use App\chapter_quiz_questions;
 use Illuminate\Support\Facades\Cookie;
 use App\chapter_quizzes;
+use App\user_lessons_progress;
 
 class WebPages extends Controller
 {
@@ -51,12 +52,41 @@ class WebPages extends Controller
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
         $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->first();
-       
+            
+        $quiz_qsts = $quiz->quiz_qsts->random(5);
+                
         return view("web.QCM1", [
             'chapter' => $chapter,
             'lesson' => $lesson,
-            'quiz' => $quiz
+            'quiz_qsts'=> $quiz_qsts
         ]);
     }
-    
+
+    public function StoreAnswer(Request $request,$lesson_id){
+        $x =0;
+        $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->first();
+        foreach ($quiz->quiz_qsts as $item) {
+            foreach ($_POST['selected'] as $key => $value){  
+                if($item['id'] == $key){
+                    if($item['right_answer'] == $value){
+                        $x++;
+                    }
+                }
+            } 
+        }
+        
+        $user_lesson_progress = new user_lessons_progress();
+        $user_lesson_progress->user_id = auth()->id;
+        $user_lesson_progress->lesson_id = $lesson_id;
+        if($x > 2){
+            $user_lesson_progress->is_done = yes;
+        }else{
+            $user_lesson_progress->is_done = no;
+        }
+       
+        return view('web.result', [
+            'x' => $x
+        ]);
+    }
+
 }

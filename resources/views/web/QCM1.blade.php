@@ -11,11 +11,13 @@
 </head>
 <body>
 	<div class="l">
-	<div id='d8'><a href="Interface.html"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
+	<div id='d8'><a href="/chapitres"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
     </div>
-			  <div id="d1"> <h3 style="color: #6d0800;">{{ $chapter->title }} >></h3>  <h4 style="color: #0a3d62;">{{ $lesson->title }}  </h4></div>
+			  <div id="d1"> 
+					<h3 style="color: #6d0800;">{{ $chapter->title }} >></h3> 
+					<h4 style="color: #0a3d62;">{{ $lesson->title }}  </h4></div>
 
-			  <div class="p3"><a href="Cours1.html"><ul ><li class="prov"><span></span> </li></ul></a></div>
+			  <div class="p3"><a href="/cour/{{$lesson->id}}"><ul ><li class="prov"><span></span> </li></ul></a></div>
       </div>
 		
 <div class="page">
@@ -28,34 +30,54 @@
 							
 		<div class="p2">
 			<br>
-			<div class="check">
-				<ul>
-					<li>
-						<label>
-							<input type="checkbox" name="">
-							<div class="icon-box" >
-								<a href="#"><i class="fa fa-check" aria-hidden="true" ></i></a>
-							</div>
-						</label>
-					</li>
-				</ul>
-			</div>
+
 			
-			<?php $x=1 ?>
-				@foreach ($quiz->quiz_qsts as $item)
-					<h2 style="margin-left: 50px;">Qst {{$x}}: {{$item->question}} </h2>
+			
+				<div class="check">
+					<ul>
+						<li>
+							<label>
+								<input type="checkbox" name="">
+								<div class="icon-box" >
+										<a href=""><i class="fa fa-check" aria-hidden="true" ></i></a>
+								</div>
+							</label>
+						</li>
+					</ul>
+				</div>
+				
+				<form action="/cour/{{$lesson->id}}/result" method="POST">
+					@csrf
+				<?php $x=1 ?>
+				@foreach ($quiz_qsts as $item)
+					<h2 style="margin-left: 50px;">Qst {{$x}}: {!! $item->question !!} </h2>
+					<br>
+					<?php 
+						$option =$item->options;
+						$single =	explode(',', $option);
+						$nbr = count($single);
+					?>
+					@for ($i = 0; $i <$nbr; $i++)
+						<div style="margin-left:100px;">
+							<input type="checkbox" name= "selected[{{$item->id}}]" value={{$single[$i]}}>
+							<label for="horns" style="margin-left:5px; margin-right:30px;">{{$single[$i]}}</label>
+						</div>
+					@endfor	
+					<!--
 					<div class="Qst">
 						<ul>
-							<!--
-							<li><label><input type="checkbox" name=""> I agree 1.</label></li>
-							<li><label><input type="checkbox" name=""> I agree 2.</label></li>
-							<li><label><input type="checkbox" name=""> I agree 3.</label></li>
-							-->	
+							<li><label><input type="checkbox" name="agree" value="agree"> I agree 1.</label></li>
+							<li><label><input type="checkbox" name="agree" value="agree"> I agree 2.</label></li>
+							<li><label><input type="checkbox" name="agree" value="agree"> I agree 3.</label></li>
 						</ul>
 					</div>
+					-->
+					<br>
 					<?php $x++ ?>	
 				@endforeach
-				
+					<button type="submit" class="btn btn-primary">check</button>
+			</form>
+			
 		</div>
 
 </body>
