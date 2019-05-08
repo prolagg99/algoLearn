@@ -3,10 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href={{ asset('assets/QCM1style.css') }}>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	
 <title> QCM du cour1</title>
 </head>
 <body>
@@ -29,26 +27,11 @@
 			<i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:450px; margin-top: -5px; '></i>
 							
 		<div class="p2">
-			<br>
-
-			
-			
-				<div class="check">
-					<ul>
-						<li>
-							<label>
-								<input type="checkbox" name="">
-								<div class="icon-box" >
-										<a href=""><i class="fa fa-check" aria-hidden="true" ></i></a>
-								</div>
-							</label>
-						</li>
-					</ul>
-				</div>
-				
-				<form action="/cour/{{$lesson->id}}/result" method="POST">
+		
+				<form id="form1" action="/cour/{{$lesson->id}}/result" method="POST">
 					@csrf
 				<?php $x=1 ?>
+				<br><br><br><br>
 				@foreach ($quiz_qsts as $item)
 					<h2 style="margin-left: 50px;">Qst {{$x}}: {!! $item->question !!} </h2>
 					<br>
@@ -63,23 +46,70 @@
 							<label for="horns" style="margin-left:5px; margin-right:30px;">{{$single[$i]}}</label>
 						</div>
 					@endfor	
-					<!--
-					<div class="Qst">
-						<ul>
-							<li><label><input type="checkbox" name="agree" value="agree"> I agree 1.</label></li>
-							<li><label><input type="checkbox" name="agree" value="agree"> I agree 2.</label></li>
-							<li><label><input type="checkbox" name="agree" value="agree"> I agree 3.</label></li>
-						</ul>
-					</div>
-					-->
+
 					<br>
 					<?php $x++ ?>	
 				@endforeach
-					<button type="submit" class="btn btn-primary">check</button>
+				<div class="check">
+						<ul>
+							<li>
+								<label>
+									<input type="checkbox" name="">
+									<div class="icon-box" >
+											<a href="#" id="myBtn"><i class="fa fa-check" aria-hidden="true" ></i></a>
+									</div>
+								</label>
+							</li>
+						</ul>
+					</div>
 			</form>
+
+						
+			<div class="row">
+					<div class="col-md-8">
+							<div class="BoxResult" id="myModel">
+									
+									<div class="content">
+											@if ($x > 5)
+											<a href="#"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
+													{!! $x !!}
+										 @elseif($x <5)
+													<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
+													{!! $x !!}
+										 @endif
+										 
+											
+											<div class="result">
+													@foreach ($answers as $item)
+															@if ($item['value'] == 'true')
+																	<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
+															@else
+																	<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
+															@endif
+													@endforeach
+											</div>
+									</div>
+									 
+							</div>
+					</div>
+			</div>
+			
 			
 		</div>
 
+		<script>
+        var box = document.getElementById("myModel");
+        var btn = document.getElementById("myBtn");
+        btn.onclick = function (){
+            box.style.display = "block";
+        }
+            window.onclick = function(event) {
+            if (event.target == box) {
+                box.style.display = "block";
+            }
+        }
+		</script>
+		
 </body>
 </html>
 

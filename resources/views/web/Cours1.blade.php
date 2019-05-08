@@ -107,7 +107,7 @@
     </div>
       <script >
        
-        var lessons_text ='<?php echo  preg_replace('/[\r\n]*/','', addslashes($lesson->details)); ?>';
+        var lessons_text ="<?php echo preg_replace("/[\r\n]*/","",addslashes($lesson->details)); ?>";
          
        
        // addslashes($lesson->details);

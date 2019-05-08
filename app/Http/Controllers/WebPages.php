@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Cookie;
 use App\chapter_quizzes;
 use App\user_lessons_progress;
 
+
 class WebPages extends Controller
 {
     
@@ -65,27 +66,45 @@ class WebPages extends Controller
     public function StoreAnswer(Request $request,$lesson_id){
         $x =0;
         $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->first();
+
+        $answersItem = array();
+        $y =0;
         foreach ($quiz->quiz_qsts as $item) {
             foreach ($_POST['selected'] as $key => $value){  
                 if($item['id'] == $key){
                     if($item['right_answer'] == $value){
                         $x++;
+                        $answersItem[$y] = array(
+                            'answer' => $value,
+                            'value' => 'true'
+                          );
+                    }else{
+                        $answersItem[$y] = array(
+                            'answer' => $value,
+                            'value' => 'false'
+                          );
                     }
                 }
+                $y++;
             } 
         }
-        
+
+
         $user_lesson_progress = new user_lessons_progress();
-        $user_lesson_progress->user_id = auth()->id;
+        $user_lesson_progress->user_id = \Auth::user()->id;
         $user_lesson_progress->lesson_id = $lesson_id;
         if($x > 2){
-            $user_lesson_progress->is_done = yes;
+            $user_lesson_progress->is_done = '1';
         }else{
-            $user_lesson_progress->is_done = no;
+            $user_lesson_progress->is_done = '0';
         }
-       
-        return view('web.result', [
-            'x' => $x
+        $user_lesson_progress->save();
+
+        
+        
+        return view("web.result", [
+            'x' => $x,
+            'answers' =>$answersItem
         ]);
     }
 
