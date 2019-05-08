@@ -59,19 +59,29 @@ class WebPages extends Controller
         return view("web.QCM1", [
             'chapter' => $chapter,
             'lesson' => $lesson,
-            'quiz_qsts'=> $quiz_qsts
+            'quiz_qsts'=> $quiz_qsts,
+            'answers' => [],
         ]);
     }
 
     public function StoreAnswer(Request $request,$lesson_id){
+        $lesson = lesson::findOrfail($lesson_id);
+        $chapter = chapter::findOrfail($lesson->chapter_id);
+        
+        $nextLesson = lesson::where('id', '>', $lesson_id)->first();
+
+
         $x =0;
         $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->first();
-
+        $quiz_qsts_posted = [];
         $answersItem = array();
         $y =0;
         foreach ($quiz->quiz_qsts as $item) {
             foreach ($_POST['selected'] as $key => $value){  
+                
                 if($item['id'] == $key){
+               
+                    $quiz_qsts_posted[] = $item;
                     if($item['right_answer'] == $value){
                         $x++;
                         $answersItem[$y] = array(
@@ -89,7 +99,7 @@ class WebPages extends Controller
             } 
         }
 
-
+    
         $user_lesson_progress = new user_lessons_progress();
         $user_lesson_progress->user_id = \Auth::user()->id;
         $user_lesson_progress->lesson_id = $lesson_id;
@@ -100,11 +110,15 @@ class WebPages extends Controller
         }
         $user_lesson_progress->save();
 
+
         
-        
-        return view("web.result", [
+        return view("web.QCM1", [
             'x' => $x,
-            'answers' =>$answersItem
+            'chapter' => $chapter,
+            'lesson' => $lesson,
+            'quiz_qsts'=> $quiz_qsts_posted,
+            'answers' =>$answersItem,
+            'nextid' => $nextLesson->id,
         ]);
     }
 

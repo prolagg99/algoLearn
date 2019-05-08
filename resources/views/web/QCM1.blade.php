@@ -42,6 +42,7 @@
 					?>
 					@for ($i = 0; $i <$nbr; $i++)
 						<div style="margin-left:100px;">
+							<input type="hidden" name="selected[{{$item->id}}]" value="">
 							<input type="checkbox" name= "selected[{{$item->id}}]" value={{$single[$i]}}>
 							<label for="horns" style="margin-left:5px; margin-right:30px;">{{$single[$i]}}</label>
 						</div>
@@ -50,7 +51,7 @@
 					<br>
 					<?php $x++ ?>	
 				@endforeach
-				<div class="check">
+				<div class="check" onclick="submitForm()">
 						<ul>
 							<li>
 								<label>
@@ -65,49 +66,54 @@
 			</form>
 
 						
-			<div class="row">
-					<div class="col-md-8">
-							<div class="BoxResult" id="myModel">
-									
-									<div class="content">
-											@if ($x > 5)
-											<a href="#"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
-													{!! $x !!}
-										 @elseif($x <5)
-													<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
-													{!! $x !!}
-										 @endif
-										 
-											
-											<div class="result">
-													@foreach ($answers as $item)
-															@if ($item['value'] == 'true')
-																	<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
-															@else
-																	<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
-															@endif
-													@endforeach
-											</div>
-									</div>
-									 
+
+			@if (count($answers) > 0) 
+
+
+			<div class="BoxResult" id="myModel">
+					
+					<div class="content">
+							@if ($x > 2)
+							<a href="/cour/{{$nextid}}/Quiz/Qsts"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
+									{!! $x !!}
+							@elseif($x < 3)
+									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
+									{!! $x !!}
+							@endif
+							
+							
+							<div class="result">
+									@foreach ($answers as $item)
+											@if ($item['value'] == 'true')
+													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
+											@else
+													<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
+											@endif
+									@endforeach
 							</div>
 					</div>
+						
 			</div>
+
+			@endif
+		
+	
 			
 			
 		</div>
 
 		<script>
-        var box = document.getElementById("myModel");
-        var btn = document.getElementById("myBtn");
-        btn.onclick = function (){
-            box.style.display = "block";
-        }
-            window.onclick = function(event) {
-            if (event.target == box) {
-                box.style.display = "block";
-            }
-        }
+
+		function submitForm() {
+			document.getElementById("form1").submit();
+		}
+
+		@if (count($answers) > 0)
+			var myModal = document.getElementById('myModel').style.display = 'block';
+		@endif;
+
+ 
+
 		</script>
 		
 </body>

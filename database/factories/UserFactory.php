@@ -74,13 +74,14 @@ $factory->define(chapter_quizzes::class, function (Faker $faker) {
 });
 
 $factory->define(chapter_quiz_questions::class, function (Faker $faker) {
+    $wordforOptionAndAnswer = $faker->word;
     return [
         'quiz_id' => '',
         'quiz_id' => '',
         'question' => $faker->word,
         'type' => 'list',
-        'options' => $faker->word,
-        'right_answer' => $faker->word
+        'options' => $wordforOptionAndAnswer,
+        'right_answer' => $wordforOptionAndAnswer
     ];
 });
 
