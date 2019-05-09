@@ -87,23 +87,23 @@
 
 
     <div id="partie4" class="tabcontent"  style="display: none"> <h3>Page 4</h3>
-    <div>
-</div>
+      <div>
+      </div>
      
-              <ul>
-                         <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
-                          <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
-                  </ul>    
+      <ul>
+        <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
+        <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
+      </ul>    
     </div>
 
     <div id="partie5" class="tabcontent"  style="display: none"> <h3>Page 5</h3>
-    <div>
-</div>
+      <div>
+      </div>
 
-    <ul>
-        <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
-        <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
-    </ul>    
+      <ul>
+          <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
+          <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
+      </ul>    
     </div>
       <script >
        
@@ -125,7 +125,7 @@
               console.log(document.getElementById("partie"+x).getElementsByClassName("next")[0]);
               document.getElementById("partie"+x).getElementsByClassName("next")[0].setAttribute("onclick", "openCity(event, 'partie" +x +"')");
             }
-          }
+          } 
         } else {
           document.getElementById('openp1').style.display = "block";
           document.getElementById("partie1").getElementsByTagName("div")[0].innerHTML = lessons_text;

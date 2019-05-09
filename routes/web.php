@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/about', function(){
+    return view('web.Aboutpage');
+});
+
 Route::get('/contact/create', 'ContactController@create')->middleware('auth');
 Route::post('/contact', 'ContactController@store');
 

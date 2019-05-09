@@ -20,7 +20,7 @@
 
         <li><a href="/">Acceuil</a></li>
         <li><a href="/chapitres">Chapitres</a></li>
-        <li><a href="#">about</a></li>
+        <li><a href="/about">about</a></li>
         <li><a href="/contact/create">contact</a></li>
         <li><a href="#">simulateur</a></li>
         </ul>
