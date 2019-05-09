@@ -25,11 +25,11 @@ margin-left: 0px;
 
 }
 .page{
+	overflow: auto;
+  height: auto;
 	background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
-  height: 550px;
   padding: 0;
-  margin-top: -10px;
 }
 #d1{
 	margin-left: 238px;
@@ -60,12 +60,11 @@ font-size: 25px;
 
 .p1{
 	background-color: #ffffff;
-	height: 485px;
+	overflow: -webkit-paged-x;
+	height: auto;
 	width: 950px;
-	margin-top: 10px;
-	margin-left: 200px;/*200*/
+	margin: 0 200px 20px;
 	padding-top: 10px;
-	margin-right: 200px;
 	opacity: 0.9;
 	/*border-radius: 25px:
 	border:white;*/
@@ -85,11 +84,9 @@ font-size: 25px;
 /************************* retour avec flesh nt3 lwst page 1 *********************/
 .page .p1 ul{
 	position: absolute;
-	/*top: 92%;*/
-	top:115%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	margin:0;
+	margin-top: 86px;
     padding: 0;
     display: flex;
 }
@@ -103,8 +100,7 @@ font-size: 25px;
     transition: .5s;
 }
 .page .p1 ul li:hover{
-
-	background :/*#0070ff*/#6d0800;
+	background :#6d0800;
 }
 .page .p1 ul li span{
 	position: absolute;
@@ -112,7 +108,6 @@ font-size: 25px;
 	height: 20px;
 	border: 4px solid #fff;
 	transition: .5s;
-
 }
 .page .p1 ul li.next span{
 	top:50%;
@@ -324,7 +319,6 @@ box-shadow: -2px 2px 0 rgba(255,255,255,1);
   	font-weight: 100;
 	position: relative;
 	max-width: 900px;
-	height: 315px;
 	border:2px solid black;/*2px*/
 	margin: 35px auto;
 	padding: 30px;
@@ -352,7 +346,6 @@ box-shadow: -2px 2px 0 rgba(255,255,255,1);
   font-weight: 100;
 	position: relative;
 	max-width: 900px;
-	height: 315px;
 	border:2px solid black;/*2px*/
 	margin: 35px auto;
 	padding: 30px;
@@ -382,7 +375,6 @@ box-shadow: -2px 2px 0 rgba(255,255,255,1);
   	font-weight: 100;
 	position: relative;
 	max-width: 900px;
-	height: 315px;
 	border:2px solid black;/*2px*/
 	margin: 35px auto;
 	padding: 30px;
@@ -411,7 +403,6 @@ box-shadow: -2px 2px 0 rgba(255,255,255,1);
   	font-weight: 100;
 	position: relative;
 	max-width: 900px;
-	height: 315px;
 	display:none;
 	border:2px solid black;/*2px*/
 	margin: 35px auto;
@@ -437,11 +428,11 @@ box-shadow: -2px 2px 0 rgba(255,255,255,1);
 	background: white;
 }
 
+/************* place du cour (partie5)***/
 #partie5 {
 	font-weight: 100;
 position: relative;
 max-width: 900px;
-height: 315px;
 display:none;
 border:2px solid black;/*2px*/
 margin: 35px auto;
@@ -451,20 +442,20 @@ display: block;
 		
 }
 #partie5:after{
-position: absolute;
-width: 50px;
-height: 50px;
-border-top: 2px solid black;/*2px*/
-border-left: 2px solid black;/*2px*/
-border-right: 0px solid black;
-border-bottom: 0px solid black;
-bottom: 100%;/* ltht*/
-left: 58%;/* lbo3d nt3 lmo3ayan*/
-margin-left: -25px;
-content: '';
-transform: rotate(45deg);
-margin-bottom: -24px;/* bch ytl3 fl itar */
-background: white;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid black;/*2px*/
+	border-left: 2px solid black;/*2px*/
+	border-right: 0px solid black;
+	border-bottom: 0px solid black;
+	bottom: 100%;/* ltht*/
+	left: 58%;/* lbo3d nt3 lmo3ayan*/
+	margin-left: -25px;
+	content: '';
+	transform: rotate(45deg);
+	margin-bottom: -24px;/* bch ytl3 fl itar */
+	background: white;
 }
 .none {
 	display: none;

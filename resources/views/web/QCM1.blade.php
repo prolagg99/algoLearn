@@ -27,7 +27,7 @@
 			<i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:450px; margin-top: -5px; '></i>
 							
 		<div class="p2">
-		
+			
 				<form id="form1" action="/cour/{{$lesson->id}}/result" method="POST">
 					@csrf
 				<?php $x=1 ?>
@@ -47,17 +47,16 @@
 							<label for="horns" style="margin-left:5px; margin-right:30px;">{{$single[$i]}}</label>
 						</div>
 					@endfor	
-
-					<br>
+					<br><br><br>
 					<?php $x++ ?>	
 				@endforeach
-				<div class="check" onclick="submitForm()">
+				<div class="check" id="myBtn" onclick="submitForm()">
 						<ul>
 							<li>
 								<label>
 									<input type="checkbox" name="">
 									<div class="icon-box" >
-											<a href="#" id="myBtn"><i class="fa fa-check" aria-hidden="true" ></i></a>
+											<a href="#"><i class="fa fa-check" aria-hidden="true" ></i></a>
 									</div>
 								</label>
 							</li>
@@ -65,41 +64,30 @@
 					</div>
 			</form>
 
-						
-
 			@if (count($answers) > 0) 
-
-
 			<div class="BoxResult" id="myModel">
 					
 					<div class="content">
-							@if ($x > 2)
-							<a href="/cour/{{$nextid}}/Quiz/Qsts"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
-									{!! $x !!}
-							@elseif($x < 3)
-									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
-									{!! $x !!}
-							@endif
-							
-							
 							<div class="result">
+								<?php $right_answer=0; ?>
 									@foreach ($answers as $item)
 											@if ($item['value'] == 'true')
+													<?php $right_answer++; ?>
 													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
 											@else
 													<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
 											@endif
 									@endforeach
 							</div>
+							@if ($right_answer > 2)
+							<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
+							@elseif($right_answer < 3)
+									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
+							@endif
 					</div>
 						
 			</div>
-
 			@endif
-		
-	
-			
-			
 		</div>
 
 		<script>
@@ -110,6 +98,7 @@
 
 		@if (count($answers) > 0)
 			var myModal = document.getElementById('myModel').style.display = 'block';
+			var btn = document.getElementById('myBtn').style.display = 'none';
 		@endif;
 
  

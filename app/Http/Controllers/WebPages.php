@@ -80,7 +80,6 @@ class WebPages extends Controller
             foreach ($_POST['selected'] as $key => $value){  
                 
                 if($item['id'] == $key){
-               
                     $quiz_qsts_posted[] = $item;
                     if($item['right_answer'] == $value){
                         $x++;
@@ -99,7 +98,7 @@ class WebPages extends Controller
             } 
         }
 
-    
+        
         $user_lesson_progress = new user_lessons_progress();
         $user_lesson_progress->user_id = \Auth::user()->id;
         $user_lesson_progress->lesson_id = $lesson_id;

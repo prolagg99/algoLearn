@@ -28,14 +28,9 @@ Route::post('/contact', 'ContactController@store');
 Route::get('/chapitres', 'WebPages@viewLessonsPage');
 Route::get('/cour/{lesson_id}', 'WebPages@viewLessonDetails')->middleware('auth');
 
-Route::get('/cour/{lesson_id}/Quiz/Qsts', 'WebPages@viewQuizQsts');
+Route::get('/cour/{lesson_id}/Quiz/Qsts', 'WebPages@viewQuizQsts')->middleware('auth');
 Route::post('/cour/{lesson_id}/result', 'WebPages@StoreAnswer');
 
-
-
-Route::get('/login', function(){
-    return view('web.login1');
-});
 Auth::routes();
 
 Route::get('/inscription', function(){
