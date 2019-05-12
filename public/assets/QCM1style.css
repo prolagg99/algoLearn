@@ -327,9 +327,9 @@ label{
 .BoxResult {
   display: none; 
   position: fixed;  
-  z-index: 1; 
-  margin-top: -880px;
-  margin-left:215px;
+  z-index: 5; 
+  top: 30%;
+  left: 30%;
   height: 250px;
   width: 500px;
   background-color: rgb(242, 242, 242);
@@ -362,4 +362,14 @@ label{
 }
 .result i{
  font-size:20px;
+}
+
+.block-div {
+display: none;
+height: 100%;
+width: 100%;
+position: fixed;
+top: 0;
+left: 15%;
+z-index: 3;
 }

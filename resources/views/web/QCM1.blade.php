@@ -8,6 +8,31 @@
 <title> QCM du cour1</title>
 </head>
 <body>
+	<div class="block-div" id="block-div"></div>
+	@if (count($answers) > 0) 
+			<div class="BoxResult" id="myModel">
+					
+					<div class="content">
+							<div class="result">
+								<?php $right_answer=0; ?>
+									@foreach ($answers as $item)
+											@if ($item['value'] == 'true')
+													<?php $right_answer++; ?>
+													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
+											@else
+													<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
+											@endif
+									@endforeach
+							</div>
+							@if ($right_answer > 2)
+							<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
+							@elseif($right_answer < 3)
+									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
+							@endif
+					</div>
+						
+			</div>
+			@endif
 	<div class="l">
 	<div id='d8'><a href="/chapitres"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
     </div>
@@ -64,30 +89,7 @@
 					</div>
 			</form>
 
-			@if (count($answers) > 0) 
-			<div class="BoxResult" id="myModel">
-					
-					<div class="content">
-							<div class="result">
-								<?php $right_answer=0; ?>
-									@foreach ($answers as $item)
-											@if ($item['value'] == 'true')
-													<?php $right_answer++; ?>
-													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
-											@else
-													<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
-											@endif
-									@endforeach
-							</div>
-							@if ($right_answer > 2)
-							<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
-							@elseif($right_answer < 3)
-									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
-							@endif
-					</div>
-						
-			</div>
-			@endif
+			
 		</div>
 
 		<script>
@@ -99,9 +101,8 @@
 		@if (count($answers) > 0)
 			var myModal = document.getElementById('myModel').style.display = 'block';
 			var btn = document.getElementById('myBtn').style.display = 'none';
+			var blockDiv = document.getElementById('block-div').style.display = 'block';
 		@endif;
-
- 
 
 		</script>
 		

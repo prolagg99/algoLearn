@@ -92,7 +92,7 @@
      
       <ul>
         <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
-        <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
+        <li class="next" onclick="openCity(event, 'partie5')"><span></span> </li>
       </ul>    
     </div>
 
@@ -101,7 +101,7 @@
       </div>
 
       <ul>
-          <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
+          <li class="prev" onclick="openCity(event, 'partie4')"><span></span> </li>
           <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
       </ul>    
     </div>
@@ -113,7 +113,7 @@
        // addslashes($lesson->details);
        // lessons_text = "Content1 @@@ Content2 @@@ Content3 @@@";
         var count = (lessons_text.match(/@@@/g) || []).length;
-        
+        var startQuiz = '<li class="next" onclick="openCity(event, \'partie4\')"><span></span> </li>';
         console.log(substring);
         if (count != 0 ){
           for (var x = 1; x <= count; x++){
@@ -122,8 +122,9 @@
             document.getElementById("partie"+x).getElementsByTagName("div")[0].innerHTML = substring;
             lessons_text = lessons_text.replace(substring + "@@@", "");
             if ( x  == count){
+
               console.log(document.getElementById("partie"+x).getElementsByClassName("next")[0]);
-              document.getElementById("partie"+x).getElementsByClassName("next")[0].setAttribute("onclick", "openCity(event, 'partie" +x +"')");
+              document.getElementById("partie"+x).getElementsByClassName("next")[0].setAttribute("onclick", "openQuizPage()");
             }
           } 
         } else {
@@ -136,6 +137,9 @@
         //split content to 5 sections 
 
         //
+        function openQuizPage(){
+          window.location.href = '/cour/{{$lesson->id}}/Quiz/Qsts';
+        }
         function openCity(evt, cityName) {
           var i, tabcontent, right;
           tabcontent = document.getElementsByClassName("tabcontent");
