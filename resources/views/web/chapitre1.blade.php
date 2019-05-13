@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/chapitre1style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/all.css">
 
 
 	<title> Chapitre </title>
@@ -108,7 +108,7 @@ function closeNav2() {
 <!------------------ end of chapters and lessons ---------------> 
 
 <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
-<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script src="assets/js/jquery-3.4.1.min.js"></script>
 
 <script>
   $(document).ready(function(){

@@ -2,8 +2,7 @@
     <html>
     <head>
         <link rel="stylesheet" type="text/css" href="assets/style1.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    
+        <link rel="stylesheet" href="assets/css/all.css">
     
         <title> Home </title>
     </head>
@@ -82,7 +81,7 @@
        <h3>ALGOLearn.com</h3>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function(){
             
