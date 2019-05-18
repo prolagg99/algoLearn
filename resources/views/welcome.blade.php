@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ALGOlearn</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css"  href={{ asset('assets/css/bootstrap.min.css') }}>
         <style>
@@ -100,6 +100,7 @@
                 
 
         </div>
+        <script src={{ asset('assets/js/jquery-3.4.1.min.js') }}></script>
         <script type="text/javascript" src={{ asset('assets/js/bootstrap.min.js') }}></script>
     </body>
 </html>

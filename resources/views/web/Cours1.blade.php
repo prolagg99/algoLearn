@@ -3,10 +3,11 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href={{ asset('assets/Cours1style.css') }}>
-  <link rel="stylesheet" href="assets/css/all.css">
-
+<link rel="stylesheet" href={{ asset('assets/css/all.css') }}>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 	<title> Cour01</title>
+
 </head>
 <body>
 	
@@ -24,91 +25,89 @@
       <div class="p3"><a href="/chapitres"><ul ><li class="prov"><span></span> </li></ul></a></div>
     </div>
 		
-<div class="page">
- <div class="retour">	<li ><span></span> </li></div>
+  <div class="page">
+    <div class="retour">	<li ><span></span> </li></div>
 
-   <div class="p1">
-     <!-- générale 
-    <ul>
-	<li class="prev"><span></span> </li>
-	<li class="next"><span></span> </li>
-	</ul>
--->
-    
-	
-
-	 <div class="p2">  
-     <div id="openp1" style="margin-left: 80px; " class="right none" onclick="openCity(event, 'partie1') "></div>
-     <div id="openp2" style="margin-left: 120px;" class="right none" onclick="openCity(event, 'partie2')"></div>
-     <div id="openp3" style="margin-left: 120px;" class="right none" onclick="openCity(event, 'partie3')"></div>
-     <div id="openp4" style="margin-left: 130px;" class="right none" onclick="openCity(event, 'partie4')"></div>
-     <div id="openp5" style="margin-left: 130px;" class="right none" onclick="openCity(event, 'partie5')"></div>
-  </div>
- <div id='question'>
-                <a href="/cour/{{request()->route('lesson_id')}}/Quiz/Qsts"> <i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:40px; margin-top: -42px;'></i>
-                </a>
-</div>
-
-
-        <div  id="partie1" class="tabcontent"  > 
-                  <h3 >Page 1</h3> 
-                  <div>
-</div>
-         
-                  <ul>
-                        <li class="prev" onclick="openCity(event, 'partie1')"><span></span> </li>
-                        <li class="next" onclick="openCity(event, 'partie2')"><span></span> </li>
-                  </ul>
+    <div class="p1">
+      <div class="block-div" id="block-div"></div>
+      <div class="BoxResult" id="myModel">
+        <div class="content">
+            <div class="result">
+                <p>you have not read the previous lesson</p>
+            </div>
+            <a href="/cour/{{$prevID}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Back</span> </button></a>
         </div>
-
-
-
-         <div id="partie2" class="tabcontent"  style="display: none"> <h3>Page 2</h3>
-         <div>
-</div>
+      </div>
+  
+      <div class="p2">  
+          <div id="openp1" style="margin-left: 80px; " class="right none" onclick="openCity(event, 'partie1') "></div>
+          <div id="openp2" style="margin-left: 120px;" class="right none" onclick="openCity(event, 'partie2')"></div>
+          <div id="openp3" style="margin-left: 120px;" class="right none" onclick="openCity(event, 'partie3')"></div>
+          <div id="openp4" style="margin-left: 130px;" class="right none" onclick="openCity(event, 'partie4')"></div>
+          <div id="openp5" style="margin-left: 130px;" class="right none" onclick="openCity(event, 'partie5')"></div>
+        </div>
+  
+  
+        <div id="question">
+          <a href="/cour/{{request()->route('lesson_id')}}/Quiz/Qsts"> <i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:40px; margin-top: -42px;'></i>
+          </a>
+        </div>
+  
+        <div  id="partie1" class="tabcontent"  > 
+          <h3 >Page 1</h3> 
+          <div>
+          </div>
           
-                   <ul>
-                         <li class="prev" onclick="openCity(event, 'partie1')" ><span></span> </li>
-                          <li class="next" onclick="openCity(event, 'partie3')" ><span></span> </li>
-                  </ul>
-         </div>
-     
+          <ul>
+                <li class="prev" onclick="openCity(event, 'partie1')"><span></span> </li>
+                <li class="next" onclick="openCity(event, 'partie2')"><span></span> </li>
+          </ul>
+        </div>
+  
+        <div id="partie2" class="tabcontent"  style="display: none"> <h3>Page 2</h3>
+          <div>
+          </div>
+            <ul>
+              <li class="prev" onclick="openCity(event, 'partie1')" ><span></span> </li>
+              <li class="next" onclick="openCity(event, 'partie3')" ><span></span> </li>
+            </ul>
+        </div>
+      
+        <div id="partie3" class="tabcontent"  style="display: none"> <h3>Page 3</h3>
+          <div>
+          </div>
+        
+          <ul>
+            <li class="prev" onclick="openCity(event, 'partie2')"><span></span> </li>
+            <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
+          </ul>
+        </div>      
+  
+  
+        <div id="partie4" class="tabcontent"  style="display: none"> <h3>Page 4</h3>
+          <div>
+          </div>
+          
+          <ul>
+            <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
+            <li class="next" onclick="openCity(event, 'partie5')"><span></span> </li>
+          </ul>    
+        </div>
+  
+        <div id="partie5" class="tabcontent"  style="display: none"> <h3>Page 5</h3>
+          <div>
+          </div>
+  
+          <ul>
+              <li class="prev" onclick="openCity(event, 'partie4')"><span></span> </li>
+              <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
+          </ul>    
+        </div>
  
-       <div id="partie3" class="tabcontent"  style="display: none"> <h3>Page 3</h3>
-       <div>
-</div>
-       
-                  <ul>
-                         <li class="prev" onclick="openCity(event, 'partie2')"><span></span> </li>
-                          <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
-                  </ul>
-      </div>      
 
-
-    <div id="partie4" class="tabcontent"  style="display: none"> <h3>Page 4</h3>
-      <div>
-      </div>
-     
-      <ul>
-        <li class="prev" onclick="openCity(event, 'partie3')"><span></span> </li>
-        <li class="next" onclick="openCity(event, 'partie5')"><span></span> </li>
-      </ul>    
-    </div>
-
-    <div id="partie5" class="tabcontent"  style="display: none"> <h3>Page 5</h3>
-      <div>
-      </div>
-
-      <ul>
-          <li class="prev" onclick="openCity(event, 'partie4')"><span></span> </li>
-          <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
-      </ul>    
-    </div>
+  
       <script >
-       
         var lessons_text ="<?php echo preg_replace("/[\r\n]*/","",addslashes($lesson->details)); ?>";
-         
-       
        // addslashes($lesson->details);
        // lessons_text = "Content1 @@@ Content2 @@@ Content3 @@@";
         var count = (lessons_text.match(/@@@/g) || []).length;
@@ -151,12 +150,20 @@
         document.getElementById(cityName).style.display = "block";
          evt.currentTarget.className += " active";
              }
-
+           
+            @foreach ($progress as $item)
+              @if(auth()->user()->id == $item['user_id'])
+                @if ($item['is_done'] == 0)
+                  var myModal = document.getElementById('myModel').style.display = 'block';
+                  var blockDiv = document.getElementById('block-div').style.display = 'block';
+                @endif  
+              @endif
+            @endforeach 
+            
 
       </script>
-     	</div>
-      
-    </div>
+   	</div>    
+  </div>
    
 </body>
 </html>

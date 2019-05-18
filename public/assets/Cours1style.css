@@ -460,3 +460,63 @@ display: block;
 .none {
 	display: none;
 }
+/********************** box */
+@font-face {
+  font-family: 'Baloo Chettan';
+  src: url('fonts/Baloo_Chettan/BalooChettan-Regular.woff2') format('woff2'),
+      url('fonts/Baloo_Chettan/BalooChettan-Regular.woff') format('woff'),
+      url('fonts/Baloo_Chettan/BalooChettan-Regular.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.BoxResult {
+  display: none; 
+  position: fixed;  
+  z-index: 5; 
+  top: 30%;
+  left: 30%;
+  height: 157px;
+  width: 500px;
+  background-color: rgb(242, 242, 242);
+  box-shadow: 5px 5px 15px #888888;
+}
+
+.BoxResult button {
+  float: right;
+  padding:0 25px;
+  margin-top: 26px;
+  margin-right: 15px;
+  height:45px;
+  width: auto;
+  border:none;
+  color:white;
+}
+.BoxResult button i{
+	font-size:18px;
+	margin-right: 5px;
+}
+.BoxResult button span{
+	font-size:16px;
+	margin-right: 5px;
+}
+.BoxResult button:hover {
+  box-shadow: 5px 5px 15px #888888;
+}
+.result{
+ font-family: 'Baloo Chettan';
+ font-size:20px;
+ margin-left:30px;
+ padding: 20px 20px;
+}
+
+
+.block-div {
+display: none;
+height: 100%;
+width: 100%;
+position: fixed;
+top: 0;
+left: 15%;
+z-index: 3;
+}

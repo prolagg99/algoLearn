@@ -43,12 +43,12 @@
       </div>
 
 	<br/><br>
-    
-        @if (Route::has('password.request'))
+        
+        
             <h4><a class="" href="/password/reset">
-                {{ __('Mot de passe oublier') }}
+                Mot de passe oublier
             </a></h4>
-        @endif
+        
         <h4><a href="/register"> J'ai pas de compte </a></h4>
     
 	</form>

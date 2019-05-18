@@ -76,6 +76,7 @@
 
 <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
 
+
 <script>
   function openDialog(chapterID) {
     var divID = "chap" + chapterID;
@@ -100,9 +101,6 @@ function openNav2() {
 function closeNav2() {
   document.getElementById("myNav2").style.height = "0%";
 }
-
-
-
 
 </script>
 <!------------------ end of chapters and lessons ---------------> 

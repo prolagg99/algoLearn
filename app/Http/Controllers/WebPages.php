@@ -16,9 +16,7 @@ class WebPages extends Controller
     
     public function viewLessonsPage() {
 
-        
         $chapters = chapter::where('course_id', 1)->with('lessons')->get();
-        
         
         Cookie::queue('lastpage2', '/chapitres', 3600);
         return view("web.chapitre1", [
@@ -38,13 +36,16 @@ class WebPages extends Controller
     }
 
     public function viewLessonDetails(request $request, $lesson_id) {
-
+        $previousLesson = lesson::where('id', '<', $lesson_id)->max('id');
+        $progress = user_lessons_progress::where('lesson_id',$previousLesson)->get();
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
        
         return view("web.Cours1", [
             'chapter' => $chapter,
             'lesson' => $lesson,
+            'progress' => $progress,
+            'prevID' => $previousLesson
         ]);
     }
 
@@ -69,6 +70,7 @@ class WebPages extends Controller
         $chapter = chapter::findOrfail($lesson->chapter_id);
         
         $nextLesson = lesson::where('id', '>', $lesson_id)->first();
+        
 
 
         $x =0;
@@ -97,7 +99,6 @@ class WebPages extends Controller
                 $y++;
             } 
         }
-
         
         $user_lesson_progress = new user_lessons_progress();
         $user_lesson_progress->user_id = \Auth::user()->id;
