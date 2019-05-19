@@ -35,12 +35,12 @@
             <div class="result">
                 <p>you have not read the previous lesson</p>
             </div>
-            <a href="/cour/{{$prevID}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Back</span> </button></a>
+            <a href="/cour/{{$lastLesson}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Back</span> </button></a>
         </div>
       </div>
   
       <div class="p2">  
-          <div id="openp1" style="margin-left: 80px; " class="right none" onclick="openCity(event, 'partie1') "></div>
+          <div id="openp1" style="margin-left: 80px;" class="right none" onclick="openCity(event, 'partie1') "></div>
           <div id="openp2" style="margin-left: 120px;" class="right none" onclick="openCity(event, 'partie2')"></div>
           <div id="openp3" style="margin-left: 120px;" class="right none" onclick="openCity(event, 'partie3')"></div>
           <div id="openp4" style="margin-left: 130px;" class="right none" onclick="openCity(event, 'partie4')"></div>
@@ -55,8 +55,9 @@
   
         <div  id="partie1" class="tabcontent"  > 
           <h3 >Page 1</h3> 
-          <div>
+          <div style="height: auto; min-height: 189px;">
           </div>
+         
           
           <ul>
                 <li class="prev" onclick="openCity(event, 'partie1')"><span></span> </li>
@@ -65,7 +66,7 @@
         </div>
   
         <div id="partie2" class="tabcontent"  style="display: none"> <h3>Page 2</h3>
-          <div>
+          <div style="height: auto; min-height: 189px;">
           </div>
             <ul>
               <li class="prev" onclick="openCity(event, 'partie1')" ><span></span> </li>
@@ -74,18 +75,19 @@
         </div>
       
         <div id="partie3" class="tabcontent"  style="display: none"> <h3>Page 3</h3>
-          <div>
+          <div style="height: auto; min-height: 189px;">
           </div>
-        
+    
           <ul>
             <li class="prev" onclick="openCity(event, 'partie2')"><span></span> </li>
             <li class="next" onclick="openCity(event, 'partie4')"><span></span> </li>
           </ul>
-        </div>      
+        </div> 
+            
   
   
         <div id="partie4" class="tabcontent"  style="display: none"> <h3>Page 4</h3>
-          <div>
+          <div style="height: auto; min-height: 189px;">
           </div>
           
           <ul>
@@ -95,7 +97,7 @@
         </div>
   
         <div id="partie5" class="tabcontent"  style="display: none"> <h3>Page 5</h3>
-          <div>
+          <div style="height: auto; min-height: 189px;">
           </div>
   
           <ul>
@@ -151,15 +153,12 @@
          evt.currentTarget.className += " active";
              }
            
-            @foreach ($progress as $item)
-              @if(auth()->user()->id == $item['user_id'])
-                @if ($item['is_done'] == 0)
-                  var myModal = document.getElementById('myModel').style.display = 'block';
-                  var blockDiv = document.getElementById('block-div').style.display = 'block';
-                @endif  
-              @endif
-            @endforeach 
-            
+        
+          @if($progress == null || $progress['is_done'] == 0)
+            var myModal = document.getElementById('myModel').style.display = 'block';
+            var blockDiv = document.getElementById('block-div').style.display = 'block';
+          @endif  
+          
 
       </script>
    	</div>    

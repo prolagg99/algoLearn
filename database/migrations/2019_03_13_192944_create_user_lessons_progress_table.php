@@ -19,6 +19,7 @@ class CreateUserLessonsProgressTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('lesson_id');
             $table->boolean('is_done');
+            $table->unique(array('user_id', 'lesson_id'));
             
         });
     }

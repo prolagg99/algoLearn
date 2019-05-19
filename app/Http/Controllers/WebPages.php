@@ -37,7 +37,10 @@ class WebPages extends Controller
 
     public function viewLessonDetails(request $request, $lesson_id) {
         $previousLesson = lesson::where('id', '<', $lesson_id)->max('id');
-        $progress = user_lessons_progress::where('lesson_id',$previousLesson)->get();
+        $progress = user_lessons_progress::where('lesson_id',$previousLesson);
+        $progress = $progress->where('user_id',\Auth::user()->id)->first();
+        $lastLesson = $progress->where('user_id',\Auth::user()->id)->max('lesson_id')->first();
+
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
        
@@ -45,7 +48,8 @@ class WebPages extends Controller
             'chapter' => $chapter,
             'lesson' => $lesson,
             'progress' => $progress,
-            'prevID' => $previousLesson
+            'prevID' => $previousLesson,
+            'lastLesson' => $lastLesson
         ]);
     }
 
@@ -99,16 +103,29 @@ class WebPages extends Controller
                 $y++;
             } 
         }
-        
-        $user_lesson_progress = new user_lessons_progress();
-        $user_lesson_progress->user_id = \Auth::user()->id;
-        $user_lesson_progress->lesson_id = $lesson_id;
-        if($x > 2){
-            $user_lesson_progress->is_done = '1';
+        $lesson_progress = user_lessons_progress::where('user_id',\Auth::user()->id);
+        $lesson_progress->where('lesson_id',$lesson_id);
+        $data = $lesson_progress->first();
+        if($data == null){
+                $user_lesson_progress = new user_lessons_progress();
+            $user_lesson_progress->user_id = \Auth::user()->id;
+            $user_lesson_progress->lesson_id = $lesson_id;
+            if($x > 2){
+                $user_lesson_progress->is_done = '1';
+            }else{
+                $user_lesson_progress->is_done = '0';
+            }
+            $user_lesson_progress->save();
+
         }else{
-            $user_lesson_progress->is_done = '0';
+            if($x > 2){
+                $data->is_done = '1';
+            }else{
+                $data->is_done = '0';
+            }
+            $data->save(); 
         }
-        $user_lesson_progress->save();
+       
 
 
         
@@ -118,7 +135,7 @@ class WebPages extends Controller
             'lesson' => $lesson,
             'quiz_qsts'=> $quiz_qsts_posted,
             'answers' =>$answersItem,
-            'nextid' => $nextLesson->id,
+            'nextid' => $nextLesson->id
         ]);
     }
 
