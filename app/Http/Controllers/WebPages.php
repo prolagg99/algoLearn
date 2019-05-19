@@ -39,8 +39,9 @@ class WebPages extends Controller
         $previousLesson = lesson::where('id', '<', $lesson_id)->max('id');
         $progress = user_lessons_progress::where('lesson_id',$previousLesson);
         $progress = $progress->where('user_id',\Auth::user()->id)->first();
-        $lastLesson = $progress->where('user_id',\Auth::user()->id)->max('lesson_id')->first();
-
+       
+        $lastLesson = user_lessons_progress::where('user_id',\Auth::user()->id)->max('lesson_id');
+        
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
        

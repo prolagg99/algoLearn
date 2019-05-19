@@ -107,7 +107,6 @@
         </div>
  
 
-  
       <script >
         var lessons_text ="<?php echo preg_replace("/[\r\n]*/","",addslashes($lesson->details)); ?>";
        // addslashes($lesson->details);
@@ -154,14 +153,23 @@
              }
            
         
-          @if($progress == null || $progress['is_done'] == 0)
-            var myModal = document.getElementById('myModel').style.display = 'block';
-            var blockDiv = document.getElementById('block-div').style.display = 'block';
-          @endif  
-          
+          @if($progress == null|| $progress['is_done'] == 0) 
+            @if ($prevID != null)
+              var myModal = document.getElementById('myModel').style.display = 'block';
+              var blockDiv = document.getElementById('block-div').style.display = 'block';
+            @endif  
+          @endif   
 
       </script>
-   	</div>    
+      
+      <div class="center"> 
+        <a href="#"><span></span>Cour Complet</a>
+      </div>
+      <div class="center1"> 
+        <a href="#"><span></span>sous forme video</a>
+      </div>   
+  
+    </div>    
   </div>
    
 </body>
