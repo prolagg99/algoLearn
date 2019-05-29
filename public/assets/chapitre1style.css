@@ -518,9 +518,8 @@ a{
    
 .dropdown-content {
   display: none;
-  width: 59px;
   position: relative;
-  left: 15px;
+  left: 18px;
   z-index: 100;
   margin-top: -78px;
 

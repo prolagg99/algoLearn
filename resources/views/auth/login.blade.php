@@ -38,7 +38,7 @@
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
             @endif
-      <input type="submit" name="" value="Login">
+      <input type="submit" name="" value="Connecter">
       <div class="inputBox"><p><a href="{{ Cookie::get('lastpage2') }}">Retour</a></p>
       </div>
 

@@ -505,7 +505,7 @@ ul{
   line-height: 60px;
   background: black;
   letter-spacing: 6px;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -529,7 +529,7 @@ ul{
   line-height: 60px;
   background:#262626;
   letter-spacing: 6px;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -552,7 +552,7 @@ ul{
   line-height: 60px;
   background:#262626;
   letter-spacing: 6px;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -620,9 +620,8 @@ opacity: 0.7;
 
 .dropdown-content {
   display: none;
-  width: 59px;
   position: relative;
-  left: 15px;
+  left: 18px;
   z-index: 100;
   margin-top: -78px;
 

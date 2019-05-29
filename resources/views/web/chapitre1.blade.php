@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="assets/css/all.css">
 
 
-	<title> Chapitre </title>
+	<title> Cours </title>
 </head>
 <body>
     <div id="d">
@@ -19,8 +19,8 @@
         <ul>
 
         <li><a href="/">Acceuil</a></li>
-        <li><a href="/chapitres">Chapitres</a></li>
-        <li><a href="/about">about</a></li>
+        <li><a href="/chapitres">Cours</a></li>
+        <li><a href="/about">À propos de</a></li>
         <li><a href="/contact/create">contact</a></li>
         <li><a href="#">simulateur</a></li>
         </ul>
@@ -29,12 +29,12 @@
 
         <div class="inputBox" style="color : blue">
             @if (Auth::guest())
-                <p><a href="/login">Login</a></p>
+                <p><a href="/login">Connecter</a></p>
             @else
           
             <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
             <p class="dropdown-content">
-              <a id="logoutButton" href="#">Logout</a>
+              <a id="logoutButton" href="#">déconnecter</a>
               @if (Auth::user()->role == "admin")
               <a href="admin/welcome">Admin Panel</a>
               @endif

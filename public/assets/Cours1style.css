@@ -533,7 +533,8 @@ z-index: 3;
 /**************************** button de lire le cours completement *******************/
 .center{
 	position : absolute;
-	top: 92%;
+	top: auto;
+	margin-top: 17px;
 	left: 25%;
 	transform: translate(-50%,-50%);
 	font-family:   arial;/*arial*/
@@ -616,7 +617,8 @@ z-index: 3;
 /**************************************** buton de suivi le cour sous forme vd ****************/
 .center1{
 	position : absolute;
-	top: 92%;
+	top: auto;
+	margin-top: 17px;
 	left: 73.5%;
 	transform: translate(-50%,-50%);
 	font-family: arial;

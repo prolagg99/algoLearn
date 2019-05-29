@@ -96,7 +96,7 @@ input[type=text]{
     cursor: pointer;
     border-radius: 10px ;
     float: right;
-    margin-right: 78px;
+    margin-right: 55px;
     margin-top: -10px;
     
 }
@@ -117,17 +117,17 @@ p{
     margin-top: -3%;
     font-size: 14px;
 
-   background: transparent;
+    background: transparent;
     border: none;
     outline: none;
     color: #fff;
     background:  #c0392b;
-    
+
     padding: 12px 22px ;
     cursor: pointer;
     border-radius: 12px ;
     float:left;
-    margin-left: 70px;
+    margin-left: 60px;
 }
 .inputBox p a{
     color: white;

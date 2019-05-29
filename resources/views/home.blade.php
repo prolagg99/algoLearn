@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="assets/style1.css">
         <link rel="stylesheet" href="assets/css/all.css">
     
-        <title> Home </title>
+        <title> Acceuil </title>
     </head>
     <body>
     <div id="d">
@@ -30,8 +30,8 @@
             <ul>
     
             <li><a href="/">Acceuil</a></li>
-            <li><a href="/chapitres">Chapitres</a></li>
-            <li><a href="/about">about</a></li>
+            <li><a href="/chapitres">Cours</a></li>
+            <li><a href="/about">À propos de</a></li>
             <li><a href="/contact/create">contact</a></li>
             <li><a href="#">simulateur</a></li>
             </ul>
@@ -39,12 +39,12 @@
             
             <div class="inputBox" style="color : blue">
                 @if (Auth::guest())
-                    <p><a href="/login">Login</a></p>
+                    <p><a href="/login">Connecter</a></p>
                 @else
               
                 <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
                 <p class="dropdown-content">
-                  <a id="logoutButton" href="#">Logout</a>
+                  <a id="logoutButton" href="#">déconnecter</a>
                   @if (Auth::user()->role == "admin")
                   <a href="admin/welcome">Admin Panel</a>
                   @endif
@@ -65,8 +65,8 @@
                 <!--<button id="buttonone"> like share </button>
                 <button id="buttontwo"> Subscribe </button> -->
                  <div class="btn">  
-     <div class="btn1"><a href="/register">S'inscrer</a></div>
-     <div class="btn2"><a href="/login">Login</a></div>
+     <div class="btn1"><a href="/register">S'inscrire</a></div>
+     <div class="btn2"><a href="/login">S'identifier</a></div>
      <div class="btn3"><a href="/chapitres">Start </a></div>
       </div>
             </div>

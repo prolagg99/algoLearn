@@ -18,16 +18,16 @@
 									@foreach ($answers as $item)
 											@if ($item['value'] == 'true')
 													<?php $right_answer++; ?>
-													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Correct</h3>
+													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Juste</h3>
 											@else
-													<h3 style="color:#f44336"><i class="fas fa-times"></i> Wrong</h3> 
+													<h3 style="color:#f44336"><i class="fas fa-times"></i> Faux</h3> 
 											@endif
 									@endforeach
 							</div>
 							@if ($right_answer > 2)
-							<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Next<i class="fas fa-arrow-right"></i></button></a>
+							<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Suivant<i class="fas fa-arrow-right"></i></button></a>
 							@elseif($right_answer < 3)
-									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Try Again <i class="fas fa-undo-alt"></i></button></a>
+									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Réessayer <i class="fas fa-undo-alt"></i></button></a>
 							@endif
 					</div>
 						
@@ -58,7 +58,7 @@
 				<?php $x=1 ?>
 				<br><br><br><br>
 				@foreach ($quiz_qsts as $item)
-					<h2 style="margin-left: 50px;">Qst {{$x}}: {!! $item->question !!} </h2>
+					<h2 style="margin-left: 50px;">Exercice {{$x}}: {!! $item->question !!} </h2>
 					<br>
 					<?php 
 						$option =$item->options;

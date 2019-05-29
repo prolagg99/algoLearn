@@ -6,7 +6,7 @@
 <link rel="stylesheet" href={{ asset('assets/css/all.css') }}>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-	<title> Cour01</title>
+	<title> Cours </title>
 
 </head>
 <body>
@@ -33,9 +33,9 @@
       <div class="BoxResult" id="myModel">
         <div class="content">
             <div class="result">
-                <p>you have not read the previous lesson</p>
+                <p>Tu n'as pas lu la leçon précédente</p>
             </div>
-            <a href="/cour/{{$lastLesson}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Back</span> </button></a>
+            <a href="/cour/{{$lastLesson}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
         </div>
       </div>
   
@@ -54,7 +54,7 @@
         </div>
   
         <div  id="partie1" class="tabcontent"  > 
-          <h3 >Page 1</h3> 
+         
           <div style="height: auto; min-height: 189px;">
           </div>
          
@@ -65,7 +65,7 @@
           </ul>
         </div>
   
-        <div id="partie2" class="tabcontent"  style="display: none"> <h3>Page 2</h3>
+        <div id="partie2" class="tabcontent"  style="display: none"> 
           <div style="height: auto; min-height: 189px;">
           </div>
             <ul>
@@ -74,7 +74,7 @@
             </ul>
         </div>
       
-        <div id="partie3" class="tabcontent"  style="display: none"> <h3>Page 3</h3>
+        <div id="partie3" class="tabcontent"  style="display: none"> 
           <div style="height: auto; min-height: 189px;">
           </div>
     
@@ -86,7 +86,7 @@
             
   
   
-        <div id="partie4" class="tabcontent"  style="display: none"> <h3>Page 4</h3>
+        <div id="partie4" class="tabcontent"  style="display: none"> 
           <div style="height: auto; min-height: 189px;">
           </div>
           
@@ -96,7 +96,7 @@
           </ul>    
         </div>
   
-        <div id="partie5" class="tabcontent"  style="display: none"> <h3>Page 5</h3>
+        <div id="partie5" class="tabcontent"  style="display: none"> 
           <div style="height: auto; min-height: 189px;">
           </div>
   

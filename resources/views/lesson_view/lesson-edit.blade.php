@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Edite a Lesson</div>
 
@@ -24,7 +24,7 @@
                     
                             <div class="form-group">
                                     <label for="">lesson details</label>
-                                    <textarea class="form-control" name="details" rows="15">{{ $lesson->details }}</textarea>
+                                    <textarea class="form-control" name="details" rows="50">{{ $lesson->details }}</textarea>
                             </div>
                             
                             
