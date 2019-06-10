@@ -35,7 +35,11 @@
             <div class="result">
                 <p>Tu n'as pas lu la leçon précédente</p>
             </div>
-            <a href="/cour/{{$lastLesson}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
+            @if ($progress == null && request()->route('id') != $firstId)
+              <a href="/cour/{{$firstId}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
+            @else
+              <a href="/cour/{{$lastLesson}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
+            @endif
         </div>
       </div>
   
@@ -163,7 +167,7 @@
       </script>
       
       <div class="center"> 
-        <a href="#"><span></span>Cour Complet</a>
+        <a href="/cour/pdf"><span></span>Cour Complet</a>
       </div>
       <div class="center1"> 
         <a href="#"><span></span>sous forme video</a>

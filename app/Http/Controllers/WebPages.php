@@ -37,6 +37,8 @@ class WebPages extends Controller
 
     public function viewLessonDetails(request $request, $lesson_id) {
         $previousLesson = lesson::where('id', '<', $lesson_id)->max('id');
+        $firstLesson = lesson::where('id', '<', $lesson_id)->min('id');
+
         $progress = user_lessons_progress::where('lesson_id',$previousLesson);
         $progress = $progress->where('user_id',\Auth::user()->id)->first();
        
@@ -50,7 +52,8 @@ class WebPages extends Controller
             'lesson' => $lesson,
             'progress' => $progress,
             'prevID' => $previousLesson,
-            'lastLesson' => $lastLesson
+            'lastLesson' => $lastLesson,
+            'firstId' => $firstLesson
         ]);
     }
 
@@ -84,7 +87,7 @@ class WebPages extends Controller
         $answersItem = array();
         $y =0;
         foreach ($quiz->quiz_qsts as $item) {
-            dd($_POST['selected']);
+           
             foreach ($_POST['selected'] as $key => $value){  
                 if($item['id'] == $key){
                     $quiz_qsts_posted[] = $item;

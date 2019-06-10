@@ -25,6 +25,10 @@ Route::get('/', function () {
 Route::get('/about', function(){
     return view('web.Aboutpage');
 });
+Route::get('/cour/pdf', function(){
+    return view('web.pdf');
+});
+
 
 Route::get('/contact/create', 'ContactController@create')->middleware('auth');
 Route::post('/contact', 'ContactController@store');

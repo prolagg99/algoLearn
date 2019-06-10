@@ -66,7 +66,9 @@
 			<span class="border"></span>
 			<p>
 				<center>
-					Après avoir pris sa retraite de la Nasa en 1970, ce major général de l'United States Air Force est nommé au poste de secrétaire d'État adjoint aux affaires publiques au département d'État des États-Unis. Un an plus tard, il devient directeur du National Air and Space Museum et occupe ce poste jusqu'en 1978, date à laquelle il démissionne pour devenir sous-secrétaire de la Smithsonian Institution. En 1980, il occupe le poste de vice-président de LTV Aerospace et démissionne en 1985 pour créer son cabinet de conseil.
+						Bienvenue<br>
+						Ce site vous aide à apprendre les algorithmes et tout ce qui les concerne, en plus il exist un simulations.
+						Vous pouvez améliorer votre niveau en évaluant à la fin de chaque leçon que vous étudiez.
 				</center>
 			</p>
 		</div>

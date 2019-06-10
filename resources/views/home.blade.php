@@ -67,7 +67,7 @@
                  <div class="btn">  
      <div class="btn1"><a href="/register">S'inscrire</a></div>
      <div class="btn2"><a href="/login">S'identifier</a></div>
-     <div class="btn3"><a href="/chapitres">Start </a></div>
+     <div class="btn3"><a href="/chapitres">Commencer </a></div>
       </div>
             </div>
     </div>
