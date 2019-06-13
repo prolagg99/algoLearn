@@ -28,6 +28,9 @@ Route::get('/about', function(){
 Route::get('/cour/pdf', function(){
     return view('web.pdf');
 });
+Route::get('/profile', 'WebPages@viewProfile')->middleware('auth');
+Route::post('/updateProfileInfo', 'WebPages@updateProfileInfo')->middleware('auth');
+
 
 
 Route::get('/contact/create', 'ContactController@create')->middleware('auth');

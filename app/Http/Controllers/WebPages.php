@@ -142,4 +142,36 @@ class WebPages extends Controller
         ]);
     }
 
+
+    public function viewProfile(){
+        $user = \App\User::findOrfail(\Auth::user()->id);
+        return view('web.profile', [
+            'user' => $user
+        ]);
+    }
+
+    public function updateProfileInfo(request $request){
+
+        if ($request->input('password') != $request->input('repassword')) {
+            return redirect('/profile')->cookie(
+                'error', 'password and retype password must match'
+            );
+        }
+
+        $user = \App\User::findOrfail(\Auth::user()->id);
+        $user->email = $request->input('email');
+        $user->name = $request->input('name');
+        if ($request->input('password') && $request->input('password') != ''){
+            $user->password = \Hash::make($request->input('password'));
+        }
+
+        if ($user->save()){
+            return redirect('/home');
+        }
+        return redirect('/profile')->cookie(
+            'error', 'profile saving error'
+        );
+
+    }
+
 }
