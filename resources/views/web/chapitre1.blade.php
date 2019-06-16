@@ -60,11 +60,12 @@
     <div style="clear:both;"></div>
     <!-- Chapter -->
     <a style="font-size:30px; display:block;" href="#" onclick="openDialog({{$chapter->id}})">  &#9776;{{$chapter->title}}</a>
- 
+    
     <!-- overlay -->
     <div class="overlay" id="chap{{$chapter->id}}">
       <a href="javascript:void(0)" class="closebtn" onclick="closeDialog({{$chapter->id}})">&times;</a>
       <div class="overlay-content">
+        <h2 style="font-family: arial; text-transform: uppercase;">{{$chapter->title}}</h2> 
         @foreach ($chapter->lessons as $lesson)
           <a href="/cour/{{$lesson->id}}"> {{$lesson->title}} </a>
         @endforeach

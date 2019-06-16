@@ -12,24 +12,26 @@
 	@if (count($answers) > 0) 
 			<div class="BoxResult" id="myModel">
 					
-					<div class="content">
-							<div class="result">
-								<?php $right_answer=0; ?>
-									@foreach ($answers as $item)
-											@if ($item['value'] == 'true')
-													<?php $right_answer++; ?>
-													<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Juste</h3>
-											@else
-													<h3 style="color:#f44336"><i class="fas fa-times"></i> Faux</h3> 
-											@endif
-									@endforeach
-							</div>
-							@if ($right_answer > 2)
-							<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Suivant<i class="fas fa-arrow-right"></i></button></a>
-							@elseif($right_answer < 3)
-									<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Réessayer <i class="fas fa-undo-alt"></i></button></a>
-							@endif
+				<div class="content">
+					<div class="result">
+						<?php $right_answer=0; ?>
+							@foreach ($answers as $item)
+									@if ($item['value'] == 'true')
+											<?php $right_answer++; ?>
+											<h3 style="color:#4CAF50;"><i class="fas fa-check"></i>Juste</h3>
+									@else
+											<h3 style="color:#f44336"><i class="fas fa-times"></i>Faux </h3> 
+									@endif
+							@endforeach
 					</div>
+					@if ($right_answer > 2)
+					<p class="R-box">Réussit : Tu dépasse le min de score</p>
+					<a href="/cour/{{$nextid}}"><button type="button" style="background-color: #4CAF50;">Suivant<i class="fas fa-arrow-right"></i></button></a>
+					@elseif($right_answer < 3)
+							<p class="R-box">Il faut avoir 50% de réponses Juste pour passé</p>
+							<a href="/cour/{{request()->route('lesson_id')}}"><button type="button" style="background-color: #f44336;"> Réessayer <i class="fas fa-undo-alt"></i></button></a>
+					@endif
+				</div>
 						
 			</div>
 			@endif

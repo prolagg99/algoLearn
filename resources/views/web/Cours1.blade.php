@@ -15,6 +15,7 @@
       <div id='d8'>
         <a href="/"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
       </div>
+       <!-- simulateur -->     <div class="inputBox" style="color : blue"><p><a href="#">Simulateur</a></p></div> 
       <div id="d1">
 
         

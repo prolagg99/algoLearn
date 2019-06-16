@@ -60,7 +60,7 @@
         <div class="lm">
        <div class="text">
              <h4> Cours • EXERCICES • EVALUATION </h4>
-                <h1> Etudier & Pratiquer </h1>
+                <h1 style=" font-size:62px;"> Etudier & Pratiquer</h1> <h1> L'algorithmique </h1>
                 <h3> Prenez vos premier pas en algorithmique </h3>
                 <!--<button id="buttonone"> like share </button>
                 <button id="buttontwo"> Subscribe </button> -->

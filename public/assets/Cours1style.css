@@ -697,3 +697,34 @@ z-index: 3;
 	color: #262626;
     transition-delay: .3s;
 }
+
+
+.l .inputBox p{
+    top: 50%;
+    margin-top: 3.5%;
+    font-size: 14px;
+    
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    background:  orange;
+    padding: 12px 22px ;
+    cursor: pointer;
+    border-radius: 12px ;
+    float:right;
+    margin-left: 480px;
+    margin-top: -65px;
+    margin-right: 150px;     
+    /*margin-top: -8.9%;
+    margin-left: 650px;
+    margin-right: 190px;*/
+    /*background: orange;*/
+    background:#c0392b; 
+    font-family: sans-serif;
+ 
+}
+p a{
+	 text-decoration: none;
+  color:white;
+}
