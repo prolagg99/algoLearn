@@ -13,8 +13,9 @@
     <div class=l>
    <!--<div id='d8'><img src="contrat-picto-337x325.png" width="120px" height="100px" />
     </div>-->
-    <div id='d8'><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" />
-    </div>
+    <div id='d8'>
+        <a href="/"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
+      </div>
 
         <ul>
 
@@ -37,7 +38,7 @@
               <a href="/profile">profile</a>
               <a id="logoutButton" href="#">déconnecter</a>
               @if (Auth::user()->role == "admin")
-              <a href="admin/welcome">Admin Panel</a>
+              <a href="/admin/welcome">Admin Panel</a>
               @endif
             </p>
             @endif
@@ -50,16 +51,15 @@
 
   <!------------------ lesson us pdf --------------->  
 
-    <script>
-    
-    header('content-type:application/pdf');
-    echo ($row['/assets/images/livre_FR']);
     
 
-    </script>
-
-    <div>
-
+    <div class="pdf">
+        <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="100%"
+        height="100%"
+        src="{{ asset('assets/pdf/1.pdf') }}">
+        </iframe>
     </div>
 
 <!------------------ end of lesson us pdf ---------------> 

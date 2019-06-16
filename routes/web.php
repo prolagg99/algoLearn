@@ -25,9 +25,10 @@ Route::get('/', function () {
 Route::get('/about', function(){
     return view('web.Aboutpage');
 });
-Route::get('/cour/pdf', function(){
-    return view('web.pdf');
-});
+
+
+Route::get('/cour/pdf/{id}', 'WebPages@pdfView');
+
 Route::get('/profile', 'WebPages@viewProfile')->middleware('auth');
 Route::post('/updateProfileInfo', 'WebPages@updateProfileInfo')->middleware('auth');
 

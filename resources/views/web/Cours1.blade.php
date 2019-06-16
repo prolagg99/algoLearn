@@ -168,7 +168,7 @@
       </script>
       
       <div class="center"> 
-        <a href="/cour/pdf"><span></span>Cour Complet</a>
+        <a href="/cour/pdf/{{$lesson->id}}"><span></span>Cour Complet</a>
       </div>
       <div class="center1"> 
         <a href="#"><span></span>sous forme video</a>

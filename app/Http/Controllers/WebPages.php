@@ -13,7 +13,12 @@ use App\user_lessons_progress;
 
 class WebPages extends Controller
 {
-    
+    public function pdfView(request $request,$id){
+        return view("web.pdf", [
+            'id' => $id
+        ]); 
+    }
+
     public function viewLessonsPage() {
 
         $chapters = chapter::where('course_id', 1)->with('lessons')->get();
