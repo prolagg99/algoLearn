@@ -34,6 +34,7 @@
           
             <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
             <p class="dropdown-content">
+              <a href="/profile">profile</a>
               <a id="logoutButton" href="#">déconnecter</a>
               @if (Auth::user()->role == "admin")
               <a href="admin/welcome">Admin Panel</a>

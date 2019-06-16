@@ -44,7 +44,10 @@
                 <p><a href="/login1">Login</a></p>
             @else
             <p id="dropdown-opener"><a href="#">{{Auth::user()->name}}</a></p>
-            <p class="dropdown-content"><a id="logoutButton" href="#">Logout</a></p>
+            <p class="dropdown-content">
+                <a href="/profile">profile</a>
+                <a id="logoutButton" href="#">Logout</a>
+            </p>
             @endif
         
         </div>
