@@ -70,7 +70,7 @@
 					@for ($i = 0; $i <$nbr; $i++)
 						<div style="margin-left:100px;">
 							<input type="hidden" name="selected[{{$item->id}}]" value="">
-							<input type="checkbox" name= "selected[{{$item->id}}]" value={{$single[$i]}}>
+							<input type="checkbox" name= "selected[{{$item->id}}]" value="{{$single[$i]}}">
 							<label for="horns" style="margin-left:5px; margin-right:30px;">{{$single[$i]}}</label>
 						</div>
 					@endfor	

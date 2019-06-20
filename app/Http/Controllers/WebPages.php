@@ -93,7 +93,7 @@ class WebPages extends Controller
         $y =0;
         foreach ($quiz->quiz_qsts as $item) {
            
-            foreach ($_POST['selected'] as $key => $value){  
+            foreach ($request->input('selected') as $key => $value){  
                 if($item['id'] == $key){
                     $quiz_qsts_posted[] = $item;
                     if($item['right_answer'] == $value){
@@ -124,6 +124,7 @@ class WebPages extends Controller
             }else{
                 $user_lesson_progress->is_done = '0';
             }
+          
             $user_lesson_progress->save();
 
         }else{
@@ -135,7 +136,7 @@ class WebPages extends Controller
             $data->save(); 
         }
        
-
+        
         
         return view("web.QCM1", [
             'x' => $x,
