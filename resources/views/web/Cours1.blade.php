@@ -170,8 +170,11 @@
       <div class="center"> 
         <a href="/cour/pdf/{{$lesson->id}}"><span></span>Cour Complet</a>
       </div>
+      <?php 
+        $v= $video[request()->route('lesson_id')]; 
+      ?>
       <div class="center1"> 
-        <a href="#"><span></span>sous forme video</a>
+        <a href="{{$v}}"><span></span>sous forme video</a>
       </div>   
   
     </div>    

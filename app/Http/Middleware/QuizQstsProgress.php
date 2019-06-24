@@ -23,10 +23,13 @@ class QuizQstsProgress
         
         if ( $progress == null || $progress['is_done'] == 0 ) {
             if($prevID != null){
-                return redirect('/cour/'.$request->lesson_id);
+                /*return redirect('/cour/'.$prevID);*/
+                return redirect('/cour/'.$request->lesson_id); 
             }else{
             return $next($request);       
             } 
+        }else{
+            return $next($request);  
         }
     }
 }

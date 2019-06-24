@@ -15,7 +15,7 @@
     </div>-->
     <div id='d8'>
         <a href="/"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
-      </div>
+    </div>
 
         <ul>
 
@@ -55,10 +55,10 @@
 
     <div class="pdf">
         <iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="100%"
-        height="100%"
-        src="{{ asset('assets/pdf/1.pdf') }}">
+            title="Inline Frame Example"
+            width="100%"
+            height="100%"
+            src="{{ asset('assets/pdf/1.pdf') }}">
         </iframe>
     </div>
 

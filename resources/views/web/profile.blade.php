@@ -40,7 +40,7 @@
       <input type="submit" name="" value="Modifier">
       <!--<input type="button" name="" value="Retour">
       <button type="button" onclick="Interface.html">Retour</button>-->
-      <div class="inputBox"><p><a href="Interface.html">Retour</a></p>
+      <div class="inputBox"><p><a href="{{ Cookie::get('lastpage2') }}">Retour</a></p>
       </div>
  
  

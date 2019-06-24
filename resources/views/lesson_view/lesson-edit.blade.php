@@ -31,7 +31,7 @@
                             <div class="form-group">
                             
                                  <button type="submit" class="btn btn-primary">edit</button>
-                                 <a href="/admin/1/lessons" class="btn btn-primary">Back</button></a>
+                                 <a href="/admin/1/{{$lesson->chapter_id}}/lessons" class="btn btn-primary">Back</button></a>
                        
                             </div>
                     

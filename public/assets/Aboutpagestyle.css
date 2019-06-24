@@ -130,14 +130,10 @@ a{
 .page{
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
-  
-
-    height: 570px;
-  padding: 60px;
+  height: 570px;
+  padding: 62px 60px;
   width: 1229px;
   margin-top: 0px;
-  
-  
 }
 
 /*.team-section{
@@ -192,7 +188,7 @@ a{
 
 }
 .section{
-  width: 600px;
+  width: 624px;
   margin: auto;
   font-size: 18px;
   color: white;

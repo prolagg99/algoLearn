@@ -23,6 +23,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', function(){
+    Cookie::queue('lastpage2', '/about', 3600);
     return view('web.Aboutpage');
 });
 

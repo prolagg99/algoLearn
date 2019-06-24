@@ -15,7 +15,7 @@
                 <div class="card-header">
                         Quiz 
                         <a class="btn btn-primary float-right" href="/admin/{{ request()->lesson_id }}/quizzes/create" role="button">New Quiz</a>
-                        <a class="btn btn-primary float-right" href="{{ URL::previous() }}" role="button" style="margin-right:3px;">back</a> 
+                        <a class="btn btn-primary float-right" href="/admin/1/{{$chapter_id}}/lessons" role="button" style="margin-right:3px;">back</a> 
                 </div>
                 
                 <div class="card-body">

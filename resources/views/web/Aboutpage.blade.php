@@ -68,9 +68,8 @@
 			<span class="border"></span>
 			<p>
 				<center>
-						Bienvenue<br>
-						Ce site vous aide à apprendre les algorithmes et tout ce qui les concerne, en plus il exist un simulations.
-						Vous pouvez améliorer votre niveau en évaluant à la fin de chaque leçon que vous étudiez.
+						ALGO LEARN est un environnement d’apprentissage online peut prendre comme outil d’aide pour minimiser les difficultés des apprenants dans l'algorithmique.
+						<br> ALGO LEARN est basé sur l’apprentissage d'algorithme à l'aide de la simulation sous forme des cours ; chaque cours se terminé par une évaluation (QCM) pour que l’apprenant puisse tester et contrôler ses connaissances prises pendant le cours. Pour passer au cours suivant l’apprenant doit faire obligatoirement l’évaluation et obtenir au minimum un score de 50%.						
 				</center>
 			</p>
 		</div>

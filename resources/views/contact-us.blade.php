@@ -33,7 +33,7 @@
                             <textarea name="message"  class="contact-form-text form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" value="{{ old('message') }}" required placeholder="Votre Message"  cols="30" rows="10" placeholder="Tapez votre message ici"></textarea> 
                             
                             <input type="submit" class="contact-form-btn" value="Envoyer">
-                            <a href="/" type="submit" class="contact-form-btn back" style="float:left;">Anuulé</a>
+                            <a href="{{ Cookie::get('lastpage2') }}" type="submit" class="contact-form-btn back" style="float:left;">Anuulé</a>
                             
                         </form> 
                         

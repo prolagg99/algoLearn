@@ -42,12 +42,12 @@ margin-left: 0px;
 .p1{
 	background-color: #ffffff;
 	height: auto;
-  overflow: -webkit-paged-x;
 	width: 950px;
 	padding-top: 10px;
   margin: 0 200px 20px;
 	opacity: 0.9;
-	border-radius: 15px;
+  border-radius: 15px;
+  overflow: hidden;
 
 }
 .p2{

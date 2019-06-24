@@ -32,11 +32,15 @@ class WebPages extends Controller
     public function viewQuizPage(request $request) {
 
         $lesson_id=$request->lesson_id;
+        $lesson = lesson::findOrfail($lesson_id);
+        $chpter_id = $lesson->chapter_id;
         
+
         $quiz = chapter_quizzes::where('lesson_id',$lesson_id)->with('quiz_qsts')->get();
        
         return view("welcome-quiz-qsts", [
-            'quiz' => $quiz
+            'quiz' => $quiz,
+            'chapter_id' => $chpter_id
         ]);
     }
 
@@ -51,14 +55,20 @@ class WebPages extends Controller
         
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
-      
+        $video = array();
+            $video[1] = 'https://www.youtube.com/watch?v=mv60qJqdTK4&fbclid=IwAR0uc7ohSvFUR9lpyPY4mUgSvDBmz-llwEhFgL2StsA0WM4riP3dxb9BqeA';
+            $video[2] = 'https://www.youtube.com/watch?v=r45t_xBKJSs';
+            $video[3] = 'https://www.youtube.com/watch?v=G3mASuJdmDQ';
+           
+
         return view("web.Cours1", [
             'chapter' => $chapter,
             'lesson' => $lesson,
             'progress' => $progress,
             'prevID' => $previousLesson,
             'lastLesson' => $lastLesson,
-            'firstId' => $firstLesson
+            'firstId' => $firstLesson,
+            'video' => $video
         ]);
     }
 
@@ -91,6 +101,8 @@ class WebPages extends Controller
         $quiz_qsts_posted = [];
         $answersItem = array();
         $y =0;
+        
+        
         foreach ($quiz->quiz_qsts as $item) {
            
             foreach ($request->input('selected') as $key => $value){  
@@ -112,6 +124,8 @@ class WebPages extends Controller
                 $y++;
             } 
         }
+        
+        
         $lesson_progress = user_lessons_progress::where('user_id',\Auth::user()->id);
         $lesson_progress->where('lesson_id',$lesson_id);
         $data = $lesson_progress->first();

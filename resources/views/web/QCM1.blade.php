@@ -48,7 +48,7 @@
 <div class="page">
  <div class="retour">	<li ><span></span> </li></div>
 
-   <div class="p1">
+   <div class="p1" id="p1-box">
 			<h3 style="float: left; margin-left: 380px; font-size: 36px; margin-top:-5px;color: rgba(255,255,255,1); font-family: sans-serif;"> QCM </h3>
 				
 			<i class='fas fa-question' style='font-size:36px; color:rgba(255,255,255,1); float: right; margin-right:450px; margin-top: -5px; '></i>
@@ -67,16 +67,21 @@
 						$single =	explode(',', $option);
 						$nbr = count($single);
 					?>
+					
+					<input type="hidden" id="a{{$item->id}}" name="selected[{{$item->id}}]" value="">
+
 					@for ($i = 0; $i <$nbr; $i++)
 						<div style="margin-left:100px;">
-							<input type="hidden" name="selected[{{$item->id}}]" value="">
-							<input type="checkbox" name= "selected[{{$item->id}}]" value="{{$single[$i]}}">
+							<?php $value = $single[$i] ?>
+							<input type="checkbox"  onchange="onChange(event,'chb'+{{$item->id}})" class="chb{{$item->id}}" value="{{$value}}" data-myid="{{$item->id}}">
 							<label for="horns" style="margin-left:5px; margin-right:30px;">{{$single[$i]}}</label>
 						</div>
 					@endfor	
+					
 					<br><br><br>
 					<?php $x++ ?>	
 				@endforeach
+				
 				<div class="check" id="myBtn" onclick="submitForm()">
 						<ul>
 							<li>
@@ -94,6 +99,7 @@
 			
 		</div>
 
+		<script src={{ asset('assets/js/jquery-3.4.1.min.js') }}></script>
 		<script>
 
 		function submitForm() {
@@ -102,9 +108,20 @@
 
 		@if (count($answers) > 0)
 			var myModal = document.getElementById('myModel').style.display = 'block';
-			var btn = document.getElementById('myBtn').style.display = 'none';
+			/*var btn = document.getElementById('myBtn').style.display = 'none'; */
 			var blockDiv = document.getElementById('block-div').style.display = 'block';
+			/** var box = document.getElementById('p1-box').style.paddingBottom= ''; **/
 		@endif;
+
+		function onChange(e,p1){
+			console.log($(e.target).attr('data-myid'));
+			$("."+p1).prop('checked', false);
+			$(e.target).prop('checked', true);
+			var id = "a" + $(e.target).attr('data-myid');
+			var selectedValue = e.target.value;
+			$("#"+id).val(selectedValue);
+		}
+		
 
 		</script>
 		
