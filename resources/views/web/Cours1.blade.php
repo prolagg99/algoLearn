@@ -15,7 +15,7 @@
       <div id='d8'>
         <a href="/"><img src="{{ url('/') }}/assets/images/5695.png" width="120px" height="100px" /></a>
       </div>
-       <!-- simulateur -->     <div class="inputBox" style="color : blue"><p><a href="#">Simulateur</a></p></div> 
+       <!-- simulateur -->     <div class="inputBox" style="color : blue"><p><a href="{{asset('assets/algobox/algoboxwin64usb.zip')}}">Simulateur</a></p></div> 
       <div id="d1">
 
         
@@ -28,7 +28,6 @@
 		
   <div class="page">
     <div class="retour">	<li ><span></span> </li></div>
-
     <div class="p1">
       <div class="block-div" id="block-div"></div>
       <div class="BoxResult" id="myModel">
@@ -36,11 +35,17 @@
             <div class="result">
                 <p>Tu n'as pas lu la leçon précédente</p>
             </div>
-            @if ($progress == null && request()->route('id') != $firstId)
-              <a href="/cour/{{$firstId}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
-            @else
-              <a href="/cour/{{$lastLesson}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
-            @endif
+            
+            @if (request()->route('id') != $firstId)
+              @if($lastLesson == null)
+                <a href="/cour/{{$firstId}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
+              @elseif($lastLesson->is_done == 0)
+                <a href="/cour/{{$lastLesson->lesson_id}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
+              @elseif($lastLesson->is_done == 1)
+                <a href="/cour/{{$lastLesson->lesson_id+1}}"><button type="button" style="background-color: #f44336;"><i class="fas fa-arrow-left"></i> <span class="font-size: 16px;">Leçon précédente</span> </button></a>
+              @endif
+            @endif  
+            
         </div>
       </div>
   

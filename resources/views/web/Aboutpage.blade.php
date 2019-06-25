@@ -27,7 +27,7 @@
 						<li><a href="/chapitres">Cours</a></li>
 						<li><a href="/about">À propos de</a></li>
 						<li><a href="/contact/create">contact</a></li>
-						<li><a href="#">simulateur</a></li>
+						<li><a href="{{ asset('assets/algobox/algoboxwin64usb.zip') }}">simulateur</a></li>
 					</ul>
 				  <br/><br/>
 				  <!--<div class="inputBox" style="color : blue"><p><a href="#">Connecter</a></p>

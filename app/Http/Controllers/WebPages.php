@@ -47,11 +47,13 @@ class WebPages extends Controller
     public function viewLessonDetails(request $request, $lesson_id) {
         $previousLesson = lesson::where('id', '<', $lesson_id)->max('id');
         $firstLesson = lesson::where('id', '<', $lesson_id)->min('id');
-
+        
         $progress = user_lessons_progress::where('lesson_id',$previousLesson);
         $progress = $progress->where('user_id',\Auth::user()->id)->first();
-       
-        $lastLesson = user_lessons_progress::where('user_id',\Auth::user()->id)->max('lesson_id');
+
+        $lastLesson = user_lessons_progress::where('user_id',\Auth::user()->id)->orderBy('lesson_id','DESC')->first();
+        
+      
         
         $lesson = lesson::findOrfail($lesson_id);
         $chapter = chapter::findOrfail($lesson->chapter_id);
@@ -59,6 +61,7 @@ class WebPages extends Controller
             $video[1] = 'https://www.youtube.com/watch?v=mv60qJqdTK4&fbclid=IwAR0uc7ohSvFUR9lpyPY4mUgSvDBmz-llwEhFgL2StsA0WM4riP3dxb9BqeA';
             $video[2] = 'https://www.youtube.com/watch?v=r45t_xBKJSs';
             $video[3] = 'https://www.youtube.com/watch?v=G3mASuJdmDQ';
+            $video[4] = 'https://www.youtube.com/watch?v=G3mASuJdmDQ';
            
 
         return view("web.Cours1", [
