@@ -29,11 +29,11 @@
                 <label> email </label>
             </div>            
             <div class="inputBox" >
-                <input autocomplete="off" type="password" name="password" required="">
+                <input autocomplete="off" type="password" name="password">
                 <label> Mot de passe </label>
             </div>
             <div class="inputBox" >
-                <input autocomplete="off" type="password" name="repassword" required="">
+                <input autocomplete="off" type="password" name="repassword">
                 <label> Confirmer le mot de passe </label>
             </div>
         
